@@ -294,20 +294,31 @@ form input[type]:valid + label {
 }
 
 /* 
-  Home W/ Modal
+  Sign Up
   =================
 */
 
-.body__home > main .modal .modal__content > h4 {
+.modal.modal__sign_up .modal__content > h4 {
   max-width: 720px;
   margin: auto;
   font-weight: 300;
 }
 
-.body__home > main .modal .modal__content > form {
+.modal.modal__sign_up .modal__content>form {
   margin-top: 4em;
 }
 
-.body__home > main .modal .modal__content > h5 {
+.modal.modal__sign_up .modal__content>h5 {
   margin: 0;
+}
+
+/* 
+  Sign Up  - Alternate
+  =======================
+*/
+
+.modal.modal__sign_up_alternate,
+.modal.modal__sign_up_alternate .modal__content,
+.modal.modal__sign_up_alternate .modal__content>form .form__group>label {
+  background-color: #609570;
 }
