@@ -3,8 +3,9 @@
   1.  Normalization
   2.  General
   3.  Typegraphy
-  4.  Buttons
-  5.  Navigation
+  4.  Navigation
+  5.  Modals
+  6.  Forms
 */
 
 /* 
@@ -38,50 +39,78 @@ a:visited {
   text-decoration: none;
 }
 
+button,
+.button {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  display: inline-block;
+  width: 265px;
+  max-width: 100%;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 7.5px;
+  color: #898787;
+  background-color: white;
+  border-radius: 28px;
+  padding: 16px;
+  cursor: pointer;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
 /* 
   3.  Typography
   ===================
 */
 
 h1 {
+  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 96px;
   font-weight: light;
   letter-spacing: -0.09375rem;
+  color: inherit;
 }
 
 h2 {
+  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 60px;
   font-weight: light;
   letter-spacing: -0.03125rem;
+  color: inherit;
 }
 
 h3 {
+  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 48px;
   letter-spacing: 0;
+  color: inherit;
 }
 
 h4 {
+  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 34px;
+  line-height: 1.39;
   letter-spacing: 0.015625rem;
+  color: inherit;
 }
 
 h5 {
+  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 24px;
-  letter-spacing: 0;
+  letter-spacing: 1.67;
+  color: inherit;
+  font-weight: 300;
 }
 
 h6 {
+  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.009375rem;
+  color: inherit;
   text-transform: uppercase;
-}
-
-button {
-  font-size: 100%;
-  font-weight: 600px;
-  text-transform: uppercase;
-  letter-spacing: 0.015625rem;
 }
 
 .type__caption {
@@ -101,26 +130,17 @@ button {
   color: white;
 }
 
-/* 
-  4.  Button
-  ===================
-*/
+.type__center {
+  text-align: center;
+}
 
-button,
-.button {
-  display: inline-block;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 7.5px;
-  color: #898787;
-  background-color: white;
-  border-radius: 28px;
-  padding: 16px 48px;
+.type__underline {
+  text-decoration: underline;
 }
 
 
 /* 
-  5.  Navigation
+  4.  Navigation
   ===================
 */
 
@@ -131,7 +151,7 @@ nav {
   background-color: #898787;
   color: white;
   text-align: center;
-  z-index: 99;
+  z-index: 98;
 }
 
 .body__home > nav {
@@ -143,6 +163,92 @@ nav > a {
   display: inline-block;
   padding: 1em 0.85em;
   letter-spacing: 2.3;
+}
+
+/* 
+  5.  Modals
+  ========================
+*/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  z-index: 99;
+}
+
+.modal .modal__content {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 930px;
+  max-width: 100%;
+  max-height: 768px;
+  background-color: #2f2d2d;
+  padding: 6em 2em;
+}
+
+/* 
+  6.  Forms
+  ===================
+*/
+
+form {
+  max-width: 600px;
+  margin: 2em auto;
+}
+
+form .form__group {
+  display: block;
+  width: 100%;
+  position: relative;
+  margin-bottom: 3em;
+}
+
+form .form__group > label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  background-color: #2f2d2d;
+  -webkit-transition: -webkit-transform linear 200ms;
+  transition: -webkit-transform linear 200ms;
+  transition: transform linear 200ms;
+  transition: transform linear 200ms, -webkit-transform linear 200ms;
+}
+
+form .form__group > input[type] {
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0);
+  padding: 16px;
+  color: white;
+  font-size: 12px;
+}
+
+form input[type]:focus,
+form input[type]:active {
+  outline: none;
+}
+
+form input[type]:focus + label,
+form input[type]:active + label,
+form input[type]:valid + label {
+  -webkit-transform: translateY(-170%);
+          transform: translateY(-170%);
 }
 
 /* 
@@ -185,4 +291,23 @@ nav > a {
 
 .body__home > main > section > .button {
   margin: 2em auto 4em;
+}
+
+/* 
+  Home W/ Modal
+  =================
+*/
+
+.body__home > main .modal .modal__content > h4 {
+  max-width: 720px;
+  margin: auto;
+  font-weight: 300;
+}
+
+.body__home > main .modal .modal__content > form {
+  margin-top: 4em;
+}
+
+.body__home > main .modal .modal__content > h5 {
+  margin: 0;
 }
