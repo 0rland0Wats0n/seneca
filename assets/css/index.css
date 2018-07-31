@@ -3,7 +3,8 @@
   1.  Normalization
   2.  General
   3.  Typegraphy
-  4.  Navigation
+  4.  Buttons
+  5.  Navigation
 */
 
 /* 
@@ -42,9 +43,84 @@ a:visited {
   ===================
 */
 
+h1 {
+  font-size: 96px;
+  font-weight: light;
+  letter-spacing: -0.09375rem;
+}
+
+h2 {
+  font-size: 60px;
+  font-weight: light;
+  letter-spacing: -0.03125rem;
+}
+
+h3 {
+  font-size: 48px;
+  letter-spacing: 0;
+}
+
+h4 {
+  font-size: 34px;
+  letter-spacing: 0.015625rem;
+}
+
+h5 {
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+h6 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.009375rem;
+  text-transform: uppercase;
+}
+
+button {
+  font-size: 100%;
+  font-weight: 600px;
+  text-transform: uppercase;
+  letter-spacing: 0.015625rem;
+}
+
+.type__caption {
+  font-size: 12px;
+  letter-spacing: 0.025rem;
+}
+
+.type__spacey {
+  letter-spacing: 17.7px;
+}
+
+.type__uppercase {
+  text-transform: uppercase;
+}
+
+.type__color_white {
+  color: white;
+}
 
 /* 
-  4.  Navigation
+  4.  Button
+  ===================
+*/
+
+button,
+.button {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 7.5px;
+  color: #898787;
+  background-color: white;
+  border-radius: 28px;
+  padding: 16px 48px 18px;
+}
+
+
+/* 
+  5.  Navigation
   ===================
 */
 
@@ -90,5 +166,19 @@ nav > a {
   width: 262px;
   max-width: 100%;
   padding: 2em 0 0;
+  margin: 0 auto;
+}
+
+.body__home > main > section {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 60px;
+  text-align: center;
+}
+
+.body__home > main > section > h5 {
+  padding: 1em 0.5em;
+  max-width: 998px;
   margin: 0 auto;
 }
