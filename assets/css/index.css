@@ -69,15 +69,14 @@ h1 {
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 96px;
   font-weight: light;
-  letter-spacing: -0.09375rem;
   color: inherit;
 }
 
 h2 {
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 60px;
+  line-height: 75px;
   font-weight: light;
-  letter-spacing: -0.03125rem;
   color: inherit;
 }
 
@@ -492,4 +491,45 @@ form input[type="radio"]:checked + label {
 .body__donate > footer > i,
 .body__donate > footer > nav {
   display: inline-block;
+}
+
+/* 
+  Blog
+  =================
+*/
+
+.body__blog > header {
+  padding: 120px 2em 60px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.body__blog > main .blog__item_full {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.body__blog > main .blog__item_full > img {
+  max-width: 100%;
+}
+
+.body__blog > main .blog__item_full .blog__item_content {
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  background-color: #609570;
+  color: white;
+  max-width: 1030px;
+  padding: 2em 1em 2em 4em;
+}
+
+.body__blog > main .blog__item_full .blog__item_content > h2 {
+  margin: 0;
+  max-width: 768px;
+  font-family: Helvetica, sans-serif;
+}
+
+.body__blog > main .blog__item_full .blog__item_content > h5 {
+  margin: 0;
 }
