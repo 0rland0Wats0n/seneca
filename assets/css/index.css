@@ -105,10 +105,9 @@ h5 {
 }
 
 h6 {
-  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.009375rem;
+  font-weight: bold;
+  letter-spacing: 2px;
   color: inherit;
   text-transform: uppercase;
 }
@@ -205,11 +204,42 @@ form {
   margin: 2em auto;
 }
 
+form .form__group_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 3em;
+  max-width: 356px;
+}
+
+form .form__group_flex.extended {
+  max-width: 100%;
+}
+
 form .form__group {
   display: block;
   width: 100%;
   position: relative;
   margin-bottom: 3em;
+  max-width: 356px;
+}
+
+form .form__group_flex .form__group {
+  max-width: 168px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 168px;
+          flex: 0 1 168px;
+  margin-bottom: 0;
 }
 
 form .form__group > label {
@@ -239,6 +269,12 @@ form .form__group > input[type] {
   font-size: 12px;
 }
 
+form .form__cc_group > span {
+  display: inline-block;
+  color: inherit;
+  font-size: 48px;
+}
+
 form input[type]:focus,
 form input[type]:active {
   outline: none;
@@ -249,6 +285,33 @@ form input[type]:active + label,
 form input[type]:valid + label {
   -webkit-transform: translateY(-170%);
           transform: translateY(-170%);
+}
+
+form input[type="radio"] {
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+form input[type="radio"] + label {
+  font-size: 48px;
+  font-weight: bold;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.85rem;
+  border-radius: 3px;
+  -webkit-transition: background-color linear 200ms;
+  transition: background-color linear 200ms;
+}
+
+form input[type="radio"] + label:hover,
+form input[type="radio"]:active + label,
+form input[type="radio"]:focus + label,
+form input[type="radio"]:checked + label {
+  background-color: #609570;
 }
 
 /* 
@@ -321,4 +384,87 @@ form input[type]:valid + label {
 .modal.modal__sign_up_alternate .modal__content,
 .modal.modal__sign_up_alternate .modal__content>form .form__group>label {
   background-color: #609570;
+}
+
+/* 
+  Donate
+  =======================
+*/
+
+.body__donate {
+  background-color: #36b24e;
+}
+
+.body__donate > header {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.body__donate > header > a{
+  display: block;
+  max-width: 300px;
+  margin-bottom: 4em;
+}
+
+.body__donate > header > a > img {
+  max-width: 100%;
+}
+
+.body__donate > form {
+  max-width: 1140px;
+  color: white;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.body__donate > form > section:first-child {
+  max-width: 356px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 365px;
+          flex: 0 1 365px;
+}
+
+.body__donate > form > section:last-child {
+  max-width: 500px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 500px;
+          flex: 0 1 500px;
+}
+
+.body__donate > form > section > h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.body__donate > form > section > .form__group,
+.body__donate > form > section > .form__group_flex {
+  margin-bottom: 2em;
+}
+
+.body__donate > form .form__group > label {
+  background-color: #36b24e;
+}
+
+.body__donate > form .form__group > input[type] {
+  padding: 8px 16px;
+}
+
+.body__donate > form input[type]:focus + label,
+.body__donate > form input[type]:active + label,
+.body__donate > form input[type]:valid + label {
+  -webkit-transform: translateY(-133%);
+          transform: translateY(-133%);
 }
