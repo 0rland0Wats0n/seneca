@@ -29,6 +29,7 @@ html {
   font-size: 16px;
   letter-spacing: normal;
   line-height: 1.67;
+  position: relative;
 }
 
 a,
@@ -158,9 +159,9 @@ body > nav {
 }
 
 body > nav .nav__list {
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 58px;
+  top: 0;
   width: 100%;
   background-color: #898787;
   -webkit-transition: opacity 200ms linear 200ms;
@@ -454,6 +455,11 @@ form input[type="radio"]:checked + label {
   Home
   =====================
 */
+
+.body__home > nav .nav__toggle {
+  bottom: 5px;
+  top: initial;
+}
 
 .body__home > main {
   width: 100%;
