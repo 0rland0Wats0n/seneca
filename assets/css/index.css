@@ -66,18 +66,9 @@ button,
   ===================
 */
 
-h1 {
+h1, h2 {
   font-family: "Roboto", Helvetica, sans-serif;
-  font-size: 96px;
-  font-weight: light;
-  color: inherit;
-}
-
-h2 {
-  font-family: "Roboto", Helvetica, sans-serif;
-  font-size: 60px;
-  line-height: 75px;
-  font-weight: light;
+  font-size: 7vw;
   color: inherit;
 }
 
@@ -135,6 +126,16 @@ h6 {
 
 .type__underline {
   text-decoration: underline;
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 96px;
+  }
+
+  h2 {
+    font-size: 64px;
+  }
 }
 
 
@@ -635,10 +636,23 @@ form input[type="radio"]:checked + label {
   margin: 0 auto;
 }
 
-.body__blog > main .blog__item_full {
+.body__blog > main {
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.body__blog > main .blog__item_full {
+  width: 100%;
   position: relative;
+  height: 0;
+  overflow: visible;
+  padding-top: 61.11%;
+  background: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .body__blog > main .blog__item_full > img {
@@ -648,19 +662,28 @@ form input[type="radio"]:checked + label {
 .body__blog > main .blog__item_full .blog__item_content {
   position: absolute;
   left: 0;
-  bottom: 60px;
+  top: 100%;
   background-color: #609570;
   color: white;
-  max-width: 1030px;
-  padding: 2em 1em 2em 4em;
+  padding: 2em 1em;
 }
 
 .body__blog > main .blog__item_full .blog__item_content > h2 {
   margin: 0;
   max-width: 768px;
   font-family: Helvetica, sans-serif;
+  line-height: 1.25;
 }
 
 .body__blog > main .blog__item_full .blog__item_content > h5 {
   margin: 0;
+}
+
+@media (min-width: 900px) {
+  .body__blog > main .blog__item_full .blog__item_content {
+    padding-left: 7em;
+    padding-right: 3em;
+    top: initial;
+    bottom: 60px;
+  }
 }
