@@ -275,6 +275,16 @@ form .form__cc_group > span {
   font-size: 48px;
 }
 
+form .form__cc_group > span > i {
+  line-height: 0.75;
+}
+
+form .form__cc_group .cc.active { background-color: white; }
+form .form__cc_group .cc__visa.active { color: #1a1f71; }
+form .form__cc_group .cc__mastercard.active { color: #cc0000; }
+form .form__cc_group .cc__amex.active { color: #002663; }
+form .form__cc_group .cc__discover.active { color: #E55C20; }
+
 form input[type]:focus,
 form input[type]:active {
   outline: none;

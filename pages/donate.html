@@ -100,7 +100,7 @@
           </span>
         </span>
         <span class="form__group">
-          <input type="text" id="card_number" required />
+          <input type="number" id="card_number" required minlength="14" maxlength="19" />
           <label for="card_number">card number</label>
         </span>
         <div class="form__group_flex">
@@ -140,5 +140,76 @@
         </a>
       </nav>
     </footer>
+
+    <script type="text/javascript">
+      document.getElementById("card_number").addEventListener("keyup", e => {
+        let cards = document.querySelectorAll(".form__cc_group .cc"), 
+          visa = document.querySelector(".cc__visa"),
+          mastercard = document.querySelector(".cc__mastercard"),
+          amex = document.querySelector(".cc__amex"),
+          discover = document.querySelector(".cc__discover"),
+          { value } = e.target;
+        
+        if (isVisa(value))
+          visa.classList.add("active");
+
+        if (isMastercard(value))
+          mastercard.classList.add("active");
+
+        if (isAmex(value))
+          amex.classList.add("active");
+
+        if (isDiscover(value))
+          discover.classList.add("active");
+
+        if (!isVisa(value) && !isMastercard(value) && !isAmex(value) && !isDiscover(value))
+          cards.forEach(card => card.classList.remove("active"));
+      });
+
+      const isVisa = value => {
+        if (value.length > 19)
+          return false;
+
+        return value[0] === "4";
+      }
+
+      const isMastercard = value => {
+        if (value.length > 16)
+          return false;
+
+        return (
+          value.length >= 2 &&
+          ((value[0] === "5" && parseInt(value[1]) >= 1 && parseInt(value[1]) <= 5) ||
+          (value[0] === "2" && parseInt(value[1]) >= 2 && parseInt(value[1]) <= 7))
+        );
+      }
+
+      const isDiscover = value => {
+        if (value.length < 6 || value.length > 16)
+          return false;
+        
+        const tVal = parseInt(value.slice(0, 7));
+
+        return (
+          tVal === 601174 ||
+          (tVal >= 601100 && tVal <= 601109) ||
+          (tVal >= 601120 && tVal <= 601149) ||
+          (tVal >= 601177 && tVal <= 601179) ||
+          (tVal >= 601186 && tVal <= 601199) ||
+          (tVal >= 644000 && tVal <= 659999)
+        )
+      }
+
+      const isAmex = value => {
+        if (value.length > 15)
+          return false;
+
+        return (
+          value.length >= 2 &&
+          value[0] === "3" && 
+          (value[1] === "4" || value[1] === "7")
+        );
+      }
+    </script>
   </body>
 </html>
