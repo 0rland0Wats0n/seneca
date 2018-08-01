@@ -222,7 +222,8 @@ form .form__group_flex {
   max-width: 356px;
 }
 
-form .form__group_flex.extended {
+form .form__group_flex.extended,
+form .form__group.extended {
   max-width: 100%;
 }
 
