@@ -644,6 +644,9 @@ form input[type="radio"]:checked + label {
 .body__blog > main .blog__item_full {
   width: 100%;
   position: relative;
+}
+
+.body__blog > main .blog__item_full .blog__item_full_background {
   height: 0;
   overflow: visible;
   padding-top: 61.11%;
@@ -652,17 +655,14 @@ form input[type="radio"]:checked + label {
   background-repeat: no-repeat;
   background-size: contain;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.body__blog > main .blog__item_full > img {
-  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .body__blog > main .blog__item_full .blog__item_content {
-  position: absolute;
-  left: 0;
-  top: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 100%;
   background-color: #609570;
   color: white;
   padding: 2em 1em;
@@ -679,11 +679,19 @@ form input[type="radio"]:checked + label {
   margin: 0;
 }
 
+.body__blog > main > section {
+  max-width: 1140px;
+  margin: 96px auto;
+}
+
 @media (min-width: 900px) {
   .body__blog > main .blog__item_full .blog__item_content {
     padding-left: 7em;
     padding-right: 3em;
+    left: 0;
     top: initial;
     bottom: 60px;
+    width: auto;
+    position: absolute;
   }
 }
