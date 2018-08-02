@@ -819,12 +819,33 @@ form input[type="radio"]:checked + label {
 
 .body__blog > main .blog__other_items > section .blog__item_small .button {
   padding: 8px 16px;
+  color: #898787;
 }
 
 .body__blog > main .blog__more {
   width: 100%;
   text-align: center;
   margin-bottom: 60px;
+}
+
+.body__blog > footer {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 2em;
+  text-align: end;
+  color: #a7a7a7;
+}
+
+.body__blog > footer > i,
+.body__blog > footer > nav {
+  display: inline-block;
+}
+
+.body__blog > footer > nav:first-child > a {
+  text-transform: uppercase;
+  margin: 0 8px;
+  display: inline-block;
+  font-size: 12px;
 }
 
 @media (min-width: 500px) {
