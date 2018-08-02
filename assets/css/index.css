@@ -821,6 +821,12 @@ form input[type="radio"]:checked + label {
   padding: 8px 16px;
 }
 
+.body__blog > main .blog__more {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
 @media (min-width: 500px) {
   .body__blog > main .blog__other_items > section .blog__item_medium .blog__item_content {
     position: absolute;
