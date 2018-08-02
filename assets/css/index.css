@@ -1020,7 +1020,7 @@ form input[type="radio"]:checked + label {
 }
 
 .body__about > main > section:first-of-type {
-  background-image: url(../images/background-image.png);
+  background-image: url(../images/background-image.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 106px 2em 48px;
@@ -1245,4 +1245,16 @@ form input[type="radio"]:checked + label {
         -ms-flex-align: end;
             align-items: flex-end;
   }
+}
+
+/* 
+  Contact
+  ===================
+*/
+
+.body__contact {
+  background-image: url(../images/background-image.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
