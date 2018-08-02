@@ -893,3 +893,14 @@ form input[type="radio"]:checked + label {
     position: absolute;
   }
 }
+
+/* 
+  Volunteer
+  =====================
+*/
+
+.body__volunteer {
+  background-image: url(../images/text-background.png);
+  background-position: center;
+  background-size: cover;
+}
