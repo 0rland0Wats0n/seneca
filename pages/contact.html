@@ -22,13 +22,59 @@
 </head>
 
 <body class="body__contact">
+  <nav>
+    <div class="nav__list" data-state="closed">
+      <a href="/pages/about.html" title="About Us">about us</a>
+      <a href="/pages/programs.html" title="Programs">programs</a>
+      <a href="/pages/trainings.html" title="Trainings">trainings</a>
+      <a href="/pages/adopt.html" title="Adopt">adopt</a>
+      <a href="/pages/events.html" title="Events">events</a>
+      <a href="/pages/give-back.html" title="Give Back">give back</a>
+      <a href="/pages/contact.html" title="Contact">contact</a>
+    </div>
+    <span class="nav__toggle" data-state="closed">
+      <span></span>
+    </span>
+  </nav>
   <header>
     <a href="/index.html">
       <img src="../assets/images/seneca-logo.png" alt="Seneca Logo" />
     </a>
+    <h5 class="type__uppercase type__weight_500">contact us.</h5>
   </header>
   <main>
+    <section>
+      <form action="">
+        <span class="form__group extended">
+          <input type="text" id="name_first" required />
+          <label for="name_first">first name</label>
+        </span>
+        <span class="form__group extended">
+          <input type="text" id="name_last" required />
+          <label for="name_last">last name</label>
+        </span>
+        <span class="form__group extended">
+          <input type="text" id="email" required />
+          <label for="email">email</label>
+        </span>
+        <span class="form__group extended">
+          <input type="text" id="phone" />
+          <label for="phone">phone number</label>
+        </span>
+        <span class="form__group extended">
+          <input type="text" id="subject" required />
+          <label for="subject">subject</label>
+        </span>
+        <span class="form__group extended">
+          <textarea id="message" rows="8" required></textarea>
+          <label for="message">message</label>
+        </span>
+        <button type="submit">send</button>
+      </form>
+    </section>
+    <section>
 
+    </section>
   </main>
   <footer>
     <i class="fas fa-share-alt"></i>
@@ -44,6 +90,7 @@
       </a>
     </nav>
   </footer>
+  <script src="../assets/js/index.js"></script>
 </body>
 
 </html>
