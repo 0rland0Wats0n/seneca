@@ -158,7 +158,7 @@ h6 {
 */
 
 body > nav {
-  position: absolute;
+  position: fixed;
   left: 0;
   width: 100%;
   background-color: #898787;
@@ -190,6 +190,7 @@ body > nav .nav__list[data-state="closed"] {
 
 body > nav .nav__list[data-state="open"] {
   height: calc(100vh - 58px);
+  top: 58px;
   opacity: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -201,6 +202,10 @@ body > nav .nav__list[data-state="open"] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+body.body__home > nav .nav__list[data-state="open"] {
+  top: 0;
 }
 
 body > nav .nav__list a {
@@ -279,6 +284,10 @@ body > nav .nav__list[data-state="open"] + .nav__toggle > span::after {
 }
 
 @media (min-width: 992px) {
+  body > nav {
+    position: absolute;
+  }
+
   body>nav .nav__list {
     position: relative;
     left: 0;
