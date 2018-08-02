@@ -679,9 +679,87 @@ form input[type="radio"]:checked + label {
   margin: 0;
 }
 
-.body__blog > main > section {
-  max-width: 1140px;
+.body__blog > main .blog__other_items {
+  max-width: 1180px;
   margin: 96px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.body__blog > main .blog__other_items > section:first-child {
+  max-width: 488px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 488px;
+          flex: 0 1 488px;
+}
+
+.body__blog > main .blog__other_items > section:last-child {
+  max-width: 683px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 683px;
+          flex: 0 1 683px;
+}
+
+.body__blog > main .blog__other_items > section .blog__item {
+  margin: 28px 14px;
+  position: relative;
+}
+
+.body__blog > main .blog__other_items > section .blog__item_medium {
+  max-width: 100%;
+  color: white;
+}
+
+.body__blog > main .blog__other_items > section .blog__item_medium .blog__item_medium_background {
+  height: 0;
+  overflow: visible;
+  padding-top: 66.52%;
+  background: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.body__blog > main .blog__other_items > section .blog__item_medium .blog__item_content {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(59, 133, 88, 0.75);
+  padding: 1em;
+}
+
+.body__blog > main .blog__other_items > section h5 {
+  font-weight: 500;
+  margin: 0;
+  max-width: 312px;
+  line-height: 1.46;
+}
+
+@media (min-width: 500px) {
+  .body__blog > main .blog__other_items > section .blog__item_medium .blog__item_content {
+    position: absolute;
+    left: 0;
+    bottom: 26px;
+    width: auto;
+  }
+
+  .body__blog > main .blog__other_items > section h5 {
+    margin-right: 32px;
+  }
 }
 
 @media (min-width: 900px) {
