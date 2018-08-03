@@ -184,6 +184,7 @@ h6 {
 
 .type__bold { font-weight: bold; }
 .type__lighter { font-weight: lighter; }
+.type__weight_300 { font-weight: 300; }
 .type__weight_500 { font-weight: 500; }
 .type__weight_600 { font-weight: 600; }
 
@@ -1681,5 +1682,90 @@ form input[type="radio"]:checked + label {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+}
+
+/* 
+  Training
+  ==============
+*/
+
+.body__training > header {
+  padding: 120px 2em 150px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.body__training > main > section {
+  padding: 48px 2em;
+}
+
+.body__training > main > section .training__section_container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.body__training > main .button {
+  color: #898787;
+}
+
+.body__training > main > section:first-of-type {
+  background-color: #bf202f;
+  color: white;
+}
+
+.body__training > main > section:first-of-type .training__section_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.body__training > main > section:first-of-type h4 {
+  margin-top: 0;
+  max-width: 1140px;
+  margin: 0 auto 45px;
+}
+
+.body__training > main > section:first-of-type p {
+  font-size: 12px;
+  line-height: 1.83;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.body__training > main > section:first-of-type .button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 265px;
+          flex: 0 1 265px;
+}
+
+.body__training > main .training__more {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.body__training > footer {
+  padding: 2em;
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: right;
+  color: #a7a7a7;
+}
+
+@media (min-width: 400px) {
+  .body__training > main > section:first-of-type p {
+    min-width: 300px;
   }
 }
