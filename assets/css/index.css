@@ -1750,6 +1750,31 @@ form input[type="radio"]:checked + label {
           flex: 0 1 265px;
 }
 
+.body__training > main > section:nth-of-type(2) .p__group {
+  -webkit-column-gap: 28px;
+          column-gap: 28px;
+  color: #a7a7a7;
+  font-size: 12px;
+  text-align: justify;
+}
+
+.body__training > main > section:nth-of-type(3) {
+  background-color: orange;
+}
+
+.body__training > main > section:nth-of-type(3) h4 {
+  color: white;
+  line-height: 1.83;
+  letter-spacing: 11.3px;
+  max-width: 615px;
+  font-weight: 500;
+}
+
+.body__training > main > section:last-of-type p {
+  font-size: 12px;
+  color: #a7a7a7;
+}
+
 .body__training > main .training__more {
   width: 100%;
   text-align: center;
@@ -1767,5 +1792,48 @@ form input[type="radio"]:checked + label {
 @media (min-width: 400px) {
   .body__training > main > section:first-of-type p {
     min-width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .body__training>main>section:nth-of-type(2) .p__group {
+    -webkit-columns: 2;
+    columns: 2;
+  }
+
+  .body__training > main > section:last-of-type .training__section_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .body__training > main > section:last-of-type .training__section_container > .p__group:first-child {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 265px;
+              flex: 0 0 265px;
+      padding-right: 1em;
+  }
+
+  .body__training > main > section:last-of-type .training__section_container > .p__group:last-child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 753px;
+            flex: 0 1 753px;
+    padding-left: 2em;
+    border-left: 5px solid #a7a7a7;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1140px) {
+  .body__training>main>section:nth-of-type(2) .p__group {
+    -webkit-columns: 3;
+    columns: 3;
   }
 }
