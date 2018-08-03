@@ -45,6 +45,11 @@ ol {
   padding-left: 18px;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
 button,
 .button {
   outline: none;
@@ -1398,4 +1403,98 @@ form input[type="radio"]:checked + label {
   max-width: 1140px;
   margin: 0 auto;
   padding: 2em;
+}
+
+/* 
+  Careers
+  ===============
+*/
+
+.body__careers > header {
+  padding: 120px 2em 60px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.body__careers > header > nav {
+  font-family: "Roboto", Helvetica, sans-serif;
+  color: #a7a7a7;
+  margin-top: 65px;
+  line-height: 1.78;
+  letter-spacing: 1.2;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.body__careers > header > nav > a {
+  display: block;
+}
+
+.body__careers > main > section .careers__section_container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.body__careers > main > section:first-of-type {
+  background-color: #eda91f;
+  color: white;
+  padding: 56px 2em;
+}
+
+.body__careers>main>section:first-of-type > .careers__section_container>h4 {
+  margin-top: 0;
+  font-family: Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: 18px;
+  line-height: 0.83;
+}
+
+.body__careers > main > section:first-of-type > .careers__section_container .p__group {
+  font-size: 12px;
+  line-height: 1.83;
+  -webkit-column-gap: 28px;
+          column-gap: 28px;
+}
+
+.body__careers > main > section:nth-of-type(2) {
+  padding: 56px 2em;
+  color: #a7a7a7;
+}
+
+.body__careers > main > section:nth-of-type(2) > .careers__section_container .p__group {
+  font-size: 12px;
+  line-height: 1.83;
+  -webkit-column-gap: 28px;
+          column-gap: 28px;
+}
+
+.body__careers > main .careers__more {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.body__careers > footer {
+  padding: 2em;
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: right;
+  color: #a7a7a7;
+}
+
+@media (min-width: 768px) {
+  .body__careers > main > section:first-of-type > .careers__section_container .p__group,
+  .body__careers > main > section:nth-of-type(2) > .careers__section_container .p__group {
+    -webkit-columns: 2;
+            columns: 2;
+  }
+
+  
+}
+
+@media (min-width: 1140px) {
+  .body__careers > main > section:first-of-type > .careers__section_container .p__group {
+    -webkit-columns: 4;
+            columns: 4;
+  }
 }
