@@ -1534,3 +1534,21 @@ form input[type="radio"]:checked + label {
             columns: 4;
   }
 }
+
+
+/* 
+  Research
+  ===============
+*/
+
+.body__research {
+  background-color: #36b24e;
+}
+
+.body__research > footer {
+  padding: 2em;
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: right;
+  color: white;
+}
