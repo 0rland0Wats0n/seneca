@@ -1456,6 +1456,10 @@ form input[type="radio"]:checked + label {
           column-gap: 28px;
 }
 
+.body__careers > main > section:first-of-type  a.button {
+  color: #898787;
+}
+
 .body__careers > main > section:nth-of-type(2) {
   padding: 56px 2em;
   color: #a7a7a7;
@@ -1472,6 +1476,38 @@ form input[type="radio"]:checked + label {
   width: 100%;
   text-align: center;
   margin-bottom: 60px;
+}
+
+.body__careers > main > section:nth-of-type(3) {
+  background-color: #eda91f;
+  color: white;
+  padding: 18px 2em;
+  text-align: center;
+}
+
+.body__careers > main > section:nth-of-type(3) > h4 {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: 15px;
+  line-height: 0.83;
+  font-size: 30px;
+}
+
+.body__careers > main > section:last-of-type {
+  background-image: url(../images/cta-picture.png);
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 76px 2em;
+  color: #eda91f;
+  margin-bottom: 95px;
+}
+
+.body__careers > main > section:last-of-type > div > p {
+  max-width: 363px;
+  margin: 0;
+  line-height: 1.79;
 }
 
 .body__careers > footer {
