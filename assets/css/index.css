@@ -164,6 +164,7 @@ h6 {
 .type__spacey { letter-spacing: 17.7px; }
 .type__spacey_4 { letter-spacing: 4.4px; }
 .type__spacey_6 { letter-spacing: 6.7px; }
+.type__spacey_9 { letter-spacing: 9px; }
 
 .type__uppercase {
   text-transform: uppercase;
@@ -181,9 +182,8 @@ h6 {
   text-decoration: underline;
 }
 
-.type__bold {
-  font-weight: bold;
-}
+.type__bold { font-weight: bold; }
+.type__lighter { font-weight: lighter; }
 .type__weight_500 { font-weight: 500; }
 .type__weight_600 { font-weight: 600; }
 
@@ -1543,6 +1543,33 @@ form input[type="radio"]:checked + label {
 
 .body__research {
   background-color: #36b24e;
+}
+
+.body__research > header {
+   max-width: 1140px;
+   margin: 0 auto;
+   padding: 106px 2em 48px;
+   color: white;
+}
+
+.body__research > header > h6 {
+  margin-bottom: 0;
+}
+
+.body__research > main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2em 2em;
+  color: white;
+}
+
+.body__research > main .button {
+  color: #898787;
+  margin: 24px 0 48px;
+}
+
+.body__research > main > section > h6:first-child {
+  margin-top: 0;
 }
 
 .body__research > footer {
