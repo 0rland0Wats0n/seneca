@@ -84,17 +84,17 @@ button,
   background-color: #105faa;
 }
 
-body > footer {
+body footer {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-body > footer > i,
-body > footer > nav {
+body footer > i,
+body footer > nav {
   display: inline-block;
 }
 
-body > footer > nav:first-of-type > a {
+body footer > nav:first-of-type > a {
   text-transform: uppercase;
   margin: 0 8px;
   display: inline-block;
@@ -1983,4 +1983,129 @@ form input[type="radio"]:checked + label {
   .body__adopt>main .adopt__content>div .button:first-child {
     margin-right: 28px;
   }
+}
+
+/* 
+  Events
+  ================
+*/
+
+.body__events {
+  background-image: url(../images/blue-background.png);
+  background-size: cover;
+}
+
+.body__events > main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 0 auto;
+}
+
+.body__events > main > section {
+  padding: 106px 2em 48px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
+}
+
+.body__events > main > section > header {
+  margin-bottom: 64px;
+}
+
+.body__events > main > section:first-of-type {
+  
+}
+
+.body__events > main > section .events__event {
+  color: white;
+  margin: 2em 0 1em;
+}
+
+.body__events > main > section .events__event .p__group > ul > li {
+  padding-left: 10px;
+  position: relative;
+}
+
+.body__events > main > section .events__event .p__group > ul > li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.body__events > main > section:last-of-type {
+  background-color: white;
+  color: #a7a7a7;
+}
+
+.body__events > main > section:last-of-type .events__upcoming > p {
+  font-size: 14px;
+  letter-spacing: 2.3px;
+  line-height: 1.67;
+  margin-bottom: 32px;
+}
+
+.body__events > main > section:last-of-type .events__upcoming .event__upcoming {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.body__events > main > section .events__upcoming .event__upcoming .event__upcoming_date {
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1.15;
+  padding-left: 28px;
+}
+
+.body__events > main > section .events__upcoming .event__upcoming .event__upcoming_date > p {
+  margin: 0;
+}
+
+.body__events > main > section .events__upcoming .event__upcoming .event__upcoming_date > h3 {
+  margin-top: 0;
+}
+
+.body__events > main > section .events__upcoming .event__upcoming .event__upcoming_details {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 300px;
+          flex: 0 1 300px;
+  padding: 0 28px;
+}
+
+.body__events > main > section .events__upcoming .event__upcoming .event__upcoming_details > p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.body__events > main > section .events__upcoming .event__upcoming .event__upcoming_details > p:first-child {
+  font-size: 14px;
+}
+
+.body__events footer {
+  padding: 2em;
+  text-align: right;
 }
