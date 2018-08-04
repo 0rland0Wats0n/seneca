@@ -42,7 +42,7 @@
             <img src="../assets/images/seneca-logo.png" alt="Seneca Logo" />
           </a>
         </header>
-        <div class="calendar" style="width: 400px; max-width: 100%; height: 400px; background-color: white;"></div>
+        <div class="events_calendar type__color_white"></div>
         <div class="events__event">
           <span class="p__group type__caption">
             <p class="type__uppercase">SENECA ANNUAL CHARITY PICNIC</p>
@@ -120,5 +120,9 @@
       </section>
     </main>
     <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/Calendar.js"></script>
+    <script>
+      var eventsCalendar = new Calendar(".events_calendar").render()
+    </script>
   </body>
 </html>

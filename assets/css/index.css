@@ -6,6 +6,7 @@
   4.  Navigation
   5.  Modals
   6.  Forms
+  7.  Calendar
 */
 
 /* 
@@ -554,6 +555,48 @@ form input[type="radio"]:checked + label {
   background-color: #609570;
 }
 
+/* 
+  7.  Calendar
+  ====================
+*/
+
+.calendar {
+  width: 350px;
+  max-width: 100%;
+}
+
+.calendar .calendar__month,
+.calendar .calendar__days_of_week {
+  color: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
+}
+
+.calendar .calendar__month > span {
+  cursor: pointer;
+}
+
+.calendar .calendar__month .calendar__current_month {
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 4.5px;
+}
+
+.calendar .calendar__days_of_week {
+  font-size: 12px;
+  font-weight: lighter;
+}
 
 /* 
   Home
