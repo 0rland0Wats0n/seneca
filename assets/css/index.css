@@ -193,6 +193,10 @@ h6 {
   margin: 0;
 }
 
+.type__fade {
+  opacity: 0.5;
+}
+
 @media (min-width: 900px) {
   h1 {
     font-size: 72px;
@@ -596,6 +600,43 @@ form input[type="radio"]:checked + label {
 .calendar .calendar__days_of_week {
   font-size: 12px;
   font-weight: lighter;
+}
+
+.calendar .calendar__days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calendar .calendar__days_of_week > p,
+.calendar .calendar__days > span {
+  text-align: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 14.2857143%;
+          flex: 0 1 14.2857143%;
+}
+
+.calendar .calendar__days > span {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* 

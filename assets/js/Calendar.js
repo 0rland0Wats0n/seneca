@@ -2,6 +2,8 @@ function Calendar(container, month, year) {
   this.container = document.querySelector(container);
   this.month = month || new Date().getMonth();
   this.year = year || new Date().getFullYear();
+  this.days = this.getNumberOfDays();
+  this.firstDay = this.getFirstDay();
 
   this.container.classList.add("calendar");
 
@@ -29,16 +31,39 @@ function Calendar(container, month, year) {
   document.querySelector(".calendar__next_month").addEventListener("click", this.goToNextMonth.bind(this), false);
 }
 
+Calendar.prototype.setMonth = function(value) {
+  this.month = value;
+} 
+
 Calendar.prototype.render = function() {
-  
+  this.renderDays();
 }
 
-Calendar.prototype.setMonth = function(newMonth) {
+Calendar.prototype.renderNewMonth = function(newMonth) {
   document.querySelector(".calendar__current_month").innerHTML = this.getFullMonth(newMonth);
 }
 
 Calendar.prototype.renderDays = function() {
+  var prevMonth = (this.month === 0) ? 11 : this.month - 1;
+  var prevMonthDays = new Date(this.year, prevMonth, 0).getDate();
+  var days = [];
+  var cells = this.firstDay >= 5 ? 42 : 35;
 
+  for (let i = 0; i < cells; i++) {
+    if (i < this.firstDay) {
+      days.push("<span class='calender__day type__fade'>" + (prevMonthDays - this.firstDay + i + 1) + "</span>");
+      continue;
+    }
+    
+    if (i >= this.days + this.firstDay) {
+      days.push("<span class='calender__day type__fade'>" + (i - (this.days + this.firstDay) + 1) + "</span>");
+      continue;
+    }
+
+    days.push("<span class='calender__day'>" + (i - this.firstDay + 1) + "</span>");
+  }
+
+  document.querySelector(".calendar__days").innerHTML = this.createHTMLString(days);
 }
 
 Calendar.prototype.createHTMLString = function(arr) {
@@ -76,22 +101,38 @@ Calendar.prototype.getFullMonth = function(month) {
   }
 }
 
+Calendar.prototype.getNumberOfDays = function() {
+  return new Date(this.year, this.month, 0).getDate();
+}
+
+Calendar.prototype.getFirstDay = function() {
+  return new Date(this.year, this.month, 1).getDay();
+}
+
 Calendar.prototype.goToNextMonth = function() {
   if (this.month === 11) {
-    this.month = 0;
+    this.setMonth(0);
   } else {
-    this.month += 1
+    this.setMonth(this.month + 1);
   }
 
-  this.setMonth(this.month);
+  this.days = this.getNumberOfDays();
+  this.firstDay = this.getFirstDay();
+
+  this.renderNewMonth(this.month);
+  this.renderDays();
 }
 
 Calendar.prototype.goToPreviousMonth = function () {
   if (this.month === 0) {
-    this.month = 11;
+    this.setMonth(11);
   } else {
-    this.month -= 1
+    this.setMonth(this.month - 1);
   }
 
-  this.setMonth(this.month);
+  this.days = this.getNumberOfDays();
+  this.firstDay = this.getFirstDay();
+
+  this.renderNewMonth(this.month);
+  this.renderDays();
 }
