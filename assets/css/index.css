@@ -375,24 +375,36 @@ body > nav .nav__list[data-state="open"] + .nav__toggle > span::after {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100%;
   height: 100%;
+  padding: 1em;
   background-color: rgba(0,0,0,0.5);
   text-align: center;
   z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .modal .modal__content {
-  position: absolute;
-  display: inline-block;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   width: 930px;
   max-width: 100%;
   max-height: 768px;
   background-color: #2f2d2d;
   padding: 6em 2em;
+  overflow: auto;
 }
 
 /* 
