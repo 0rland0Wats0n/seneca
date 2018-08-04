@@ -1,7 +1,8 @@
-function Calendar(container, month, year) {
+function Calendar(container, month, year, day) {
   this.container = document.querySelector(container);
   this.month = month || new Date().getMonth();
   this.year = year || new Date().getFullYear();
+  this.day = day || new Date().getDate();
   this.days = this.getNumberOfDays();
   this.firstDay = this.getFirstDay();
 
@@ -60,7 +61,11 @@ Calendar.prototype.renderDays = function() {
       continue;
     }
 
-    days.push("<span class='calender__day'>" + (i - this.firstDay + 1) + "</span>");
+    if ((this.day === i - this.firstDay + 1) && this.month === new Date().getMonth()) {
+      days.push("<span class='calender__day current'>" + (i - this.firstDay + 1) + "</span>");
+    } else {
+      days.push("<span class='calender__day'>" + (i - this.firstDay + 1) + "</span>");
+    }
   }
 
   document.querySelector(".calendar__days").innerHTML = this.createHTMLString(days);

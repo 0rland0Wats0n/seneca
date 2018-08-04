@@ -639,6 +639,11 @@ form input[type="radio"]:checked + label {
           justify-content: center;
 }
 
+.calendar .calendar__days > span.current {
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
 /* 
   Home
   =====================
