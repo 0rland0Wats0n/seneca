@@ -610,12 +610,12 @@ form input[type="radio"]:checked + label {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .calendar .calendar__days_of_week > p,
@@ -624,6 +624,8 @@ form input[type="radio"]:checked + label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 14.2857143%;
           flex: 0 1 14.2857143%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .calendar .calendar__days > span {
@@ -2197,4 +2199,31 @@ form input[type="radio"]:checked + label {
 .body__events footer {
   padding: 2em;
   text-align: right;
+}
+
+@media (min-width: 1440px) {
+  .body__events {
+    overflow-y: hidden;
+  }
+
+  .body__events > main {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .body__events > main > section:first-of-type {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 865px;
+            flex: 0 1 865px;
+  }
+
+  .body__events > main > section:last-of-type {
+    max-width: 575px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 575px;
+            flex: 0 1 575px;
+    height: 100%;
+    overflow-y: auto;
+  }
 }
