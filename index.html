@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -70,10 +71,10 @@
         var activePillar = document.querySelector(".home__pillar.active");
         
         var handlePillarSwitch = function(direction) {
-          var { innerWidth } = window;
+          var innerWidth = window.innerWidth;
           var inactives = document.querySelectorAll(".home__pillar.inactive");
           var pillarsNodeList = document.querySelectorAll(".home__pillar");
-          var pillars = Array.from(pillarsNodeList);
+          var pillars = [].slice.call(pillarsNodeList);
           
           activePillar.classList.remove("active");
           activePillar.classList.add("inactive");

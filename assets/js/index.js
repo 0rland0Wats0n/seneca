@@ -1,9 +1,9 @@
 (function() {
-  let navList = document.querySelector(".nav__list"),
-    toggler = document.querySelector(".nav__toggle");
+    var navList = document.querySelector(".nav__list");
+    var toggler = document.querySelector(".nav__toggle");
 
-  toggler.addEventListener("click", () => {
-    const state = toggler.getAttribute("data-state");
+  toggler.addEventListener("click", function() {
+    var state = toggler.getAttribute("data-state");
 
     if (state === "closed") {
       toggler.setAttribute("data-state", "open");
@@ -14,9 +14,9 @@
     }
   });
 
-  window.addEventListener("resize", () => {
-    const state = toggler.getAttribute("data-state");
-    const { innerWidth } = window;
+  window.addEventListener("resize", function() {
+    var state = toggler.getAttribute("data-state");
+    var innerWidth = window.innerWidth;
 
     if (innerWidth > 992 && state === "open") {
       toggler.setAttribute("data-state", "closed");
