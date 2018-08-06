@@ -11,124 +11,66 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,900" rel="stylesheet">
 
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous">
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../assets/css/index.css">
 
     <title>Donate | Seneca</title>
   </head>
-  <body class="body__donate">
-    <header>
-      <a href="/index.html">
-        <img src="../assets/images/seneca-logo.png" alt="Seneca Logo" />
-      </a>
-      <button type="button">credit card</button>
-    </header>
-    <form>
-      <section>
-        <h6 class="type__color_white">billing information:</h6>
-        <span class="form__group">
-          <input type="text" id="name_first" required />
-          <label for="name_first">first name</label>
-        </span>
-        <span class="form__group">
-          <input type="text" id="name_last" required />
-          <label for="name_last">last name</label>
-        </span>
-        <span class="form__group">
-          <input type="text" id="email" required />
-          <label for="email">email</label>
-        </span>
-        <span class="form__group">
-          <input type="text" id="address" required />
-          <label for="address">address</label>
-        </span>
-        <div class="form__group_flex">
-          <span class="form__group">
-            <input type="text" id="city" required />
-            <label for="city">city</label>
-          </span>
-          <span class="form__group">
-            <input type="text" id="state" required />
-            <label for="state">state</label>
-          </span>
-        </div>
-        <div class="form__group_flex">
-          <span class="form__group">
-            <input type="text" id="zip_code" required />
-            <label for="zip_code">zip code</label>
-          </span>
-        </div>
-        <span class="form__group">
-          <input type="text" id="country" required />
-          <label for="country">country</label>
-        </span>
-      </section>
-      <section>
-        <h6 class="type__color_white">donation amount:</h6>
-        <span class="form__group_flex extended">
-          <span class="radio__group">
-            <input type="radio" name="donation_amount" id="50dollars" checked="checked" />
-            <label for="50dollars">$50</label>
-          </span>
-          <span class="radio__group">
-            <input type="radio" name="donation_amount" id="100dollars" />
-            <label for="100dollars">$100</label>
-          </span>
-          <span class="radio__group">
-            <input type="radio" name="donation_amount" id="200dollars" />
-            <label for="200dollars">$200</label>
-          </span>
-        </span>
-        <span class="form__group">
-          <input type="text" id="other_donation" />
-          <label for="other_donation">other amount (usd):</label>
-        </span>
-        <span class="form__group form__cc_group">
-          <span class="cc cc__visa">
-            <i class="fab fa-cc-visa"></i>
-          </span>
-          <span class="cc cc__mastercard">
-            <i class="fab fa-cc-mastercard"></i>
-          </span>
-          <span class="cc cc__discover">
-            <i class="fab fa-cc-discover"></i>
-          </span>
-          <span class="cc cc__amex">
-            <i class="fab fa-cc-amex"></i>
-          </span>
-        </span>
-        <span class="form__group">
-          <input type="number" id="card_number" required minlength="14" maxlength="19" />
-          <label for="card_number">card number</label>
-        </span>
-        <div class="form__group_flex">
-          <span class="form__group">
-            <input type="number" id="month" required />
-            <label for="month">mm</label>
-          </span>
-          <span class="form__group">
-            <input type="number" id="year" required />
-            <label for="year">yy</label>
-          </span>
-        </div>
-        <div class="form__group_flex">
-          <span class="form__group">
-            <input type="number" id="cvv" required />
-            <label for="cvv">cvv</label>
-          </span>
-        </div>
-        <button type="submit">enter</button>
+
+  <body class="body__pre_donate">
+    <nav>
+      <div class="nav__list" data-state="closed">
+        <a href="/pages/about.html" title="About Us">about us</a>
+        <a href="#" title="Programs">programs</a>
+        <a href="/pages/trainings.html" title="Trainings">trainings</a>
+        <a href="/pages/adopt.html" title="Adopt">adopt</a>
+        <a href="/pages/events.html" title="Events">events</a>
+        <a href="/pages/donate.html" title="Give Back">give back</a>
+        <a href="/pages/contact.html" title="Contact">contact</a>
+      </div>
+      <span class="nav__toggle" data-state="closed">
+        <span></span>
+      </span>
+    </nav>
+    <main>
+      <div class="pre_donate__content">
+        <header>
+          <a href="../index.html">
+            <img src="../assets/images/seneca-logo.png" alt="Seneca Logo" />
+          </a>
+        </header>
+        <p class="type__uppercase type__spacey_6 type__bold">WE CAN’T DO OUR WORK WITHOUT YOUR HELP </p>
+        <p>Join us in our mission to help children and families navigate through the most difficult times of their lives! Your investment allows us to provide Unconditional Care to children and families throughout California and Washington. Give the gift of hope today, and create a bright and happy future for youth and families in your community.</p>
+        <a href="/pages/pay.html" class="button">donate</a>
         <p class="type__caption">
-          By clicking Enter, you agree to our 
-          <a href="/pages/privacy-policy.html" class="type__underline">Privacy Policy</a>.
+          To mail your tax-deductible donation, please feel free to send a donation to your local Development Office:
         </p>
-      </section>
-    </form>
+        <p class="type__caption">
+          Seneca Family of Agencies<br>
+          San Francisco Bay Area Development Department<br>
+          6925 Chabot Road<br>
+          Oakland, CA 94618
+        </p>
+        <p class="type__caption">
+          Seneca Family of Agencies<br>
+          Central Coast Development Department<br>
+          124 River Road<br>
+          Salinas, CA 93908
+        </p>
+        <p class="type__caption">
+          Seneca Family of Agencies<br>
+          Orange County Development Department<br>
+          1801 Park Court Place, Suite H<br>
+          Santa Ana, CA 92801
+        </p>
+      </div>
+    </main>
     <footer>
-      <i class="fas fa-share-alt"></i>
       <nav>
+        <i class="fas fa-share-alt"></i>
         <a href="#" title="Share on Facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
@@ -140,76 +82,6 @@
         </a>
       </nav>
     </footer>
-
-    <script type="text/javascript">
-      document.getElementById("card_number").addEventListener("keyup", e => {
-        let cards = document.querySelectorAll(".form__cc_group .cc"), 
-          visa = document.querySelector(".cc__visa"),
-          mastercard = document.querySelector(".cc__mastercard"),
-          amex = document.querySelector(".cc__amex"),
-          discover = document.querySelector(".cc__discover"),
-          { value } = e.target;
-        
-        if (isVisa(value))
-          visa.classList.add("active");
-
-        if (isMastercard(value))
-          mastercard.classList.add("active");
-
-        if (isAmex(value))
-          amex.classList.add("active");
-
-        if (isDiscover(value))
-          discover.classList.add("active");
-
-        if (!isVisa(value) && !isMastercard(value) && !isAmex(value) && !isDiscover(value))
-          cards.forEach(card => card.classList.remove("active"));
-      });
-
-      const isVisa = value => {
-        if (value.length > 19)
-          return false;
-
-        return value[0] === "4";
-      }
-
-      const isMastercard = value => {
-        if (value.length > 16)
-          return false;
-
-        return (
-          value.length >= 2 &&
-          ((value[0] === "5" && parseInt(value[1]) >= 1 && parseInt(value[1]) <= 5) ||
-          (value[0] === "2" && parseInt(value[1]) >= 2 && parseInt(value[1]) <= 7))
-        );
-      }
-
-      const isDiscover = value => {
-        if (value.length < 6 || value.length > 16)
-          return false;
-        
-        const tVal = parseInt(value.slice(0, 7));
-
-        return (
-          tVal === 601174 ||
-          (tVal >= 601100 && tVal <= 601109) ||
-          (tVal >= 601120 && tVal <= 601149) ||
-          (tVal >= 601177 && tVal <= 601179) ||
-          (tVal >= 601186 && tVal <= 601199) ||
-          (tVal >= 644000 && tVal <= 659999)
-        )
-      }
-
-      const isAmex = value => {
-        if (value.length > 15)
-          return false;
-
-        return (
-          value.length >= 2 &&
-          value[0] === "3" && 
-          (value[1] === "4" || value[1] === "7")
-        );
-      }
-    </script>
+    <script src="../assets/js/index.js"></script>
   </body>
 </html>

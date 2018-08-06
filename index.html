@@ -20,11 +20,11 @@
       <div class="nav__inner">
         <div class="nav__list" data-state="closed">
           <a href="/pages/about.html" title="About Us">about us</a>
-          <a href="/pages/programs.html" title="Programs">programs</a>
+          <a href="#" title="Programs">programs</a>
           <a href="/pages/trainings.html" title="Trainings">trainings</a>
           <a href="/pages/adopt.html" title="Adopt">adopt</a>
           <a href="/pages/events.html" title="Events">events</a>
-          <a href="/pages/give-back.html" title="Give Back">give back</a>
+          <a href="/pages/donate.html" title="Give Back">give back</a>
           <a href="/pages/contact.html" title="Contact">contact</a>
         </div>
         <span class="nav__toggle" data-state="closed">
@@ -39,25 +39,25 @@
           <div class="home__pillar active" style="background-image: url(assets/images/bitmap@3x.jpg)">
             <div class="home__pillar_content">
               <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
-              <a href="/pages/pre-donate.html" class="button">donate</a>
+              <a href="/pages/donate.html" class="button">donate</a>
             </div>
           </div>
           <div class="home__pillar" style="background-image: url(assets/images/bitmapCopy3.jpg)">
             <div class="home__pillar_content">
               <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
-              <a href="/pages/pre-donate.html" class="button">donate</a>
+              <a href="/pages/donate.html" class="button">donate</a>
             </div>
           </div>
           <div class="home__pillar" style="background-image: url(assets/images/bitmapCopy2.jpg)">
             <div class="home__pillar_content">
               <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
-              <a href="/pages/pre-donate.html" class="button">donate</a>
+              <a href="/pages/donate.html" class="button">donate</a>
             </div>
           </div>
           <div class="home__pillar" style="background-image: url(assets/images/bitmap.png)">
             <div class="home__pillar_content">
               <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
-              <a href="/pages/pre-donate.html" class="button">donate</a>
+              <a href="/pages/donate.html" class="button">donate</a>
             </div>
           </div>
         </div>
@@ -67,29 +67,31 @@
     <script src="/assets/js/index.js"></script>
     <script>
       (function() {
-        var activePillar = document.querySelector(".home__pillar.active"),
-          switchInterval = setInterval(function() {
-            var { innerWidth } = window;
-            var inactives = document.querySelectorAll(".home__pillar.inactive");
+        var activePillar = document.querySelector(".home__pillar.active");
+        var switchInterval = setInterval(function() { handlePillarSwitch(); }, 5000);
 
-            if (innerWidth >= 720 && innerWidth < 1080) {
-              activePillar.classList.remove("active");
-              
-              if (inactives.length < 2)
-                activePillar.classList.add("inactive");
-            } else {
-              activePillar.classList.remove("active");
-            }
+        var handlePillarSwitch = function() {
+          var { innerWidth } = window;
+          var inactives = document.querySelectorAll(".home__pillar.inactive");
+
+          if (innerWidth >= 720 && innerWidth < 1080) {
+            activePillar.classList.remove("active");
             
-            if (!activePillar.nextElementSibling) {
-              activePillar = document.querySelector(".home__pillar");
-              inactives.forEach(function(inactive) { inactive.classList.remove("inactive"); });
-            } else {
-              activePillar = activePillar.nextElementSibling;
-            }
+            if (inactives.length < 2)
+              activePillar.classList.add("inactive");
+          } else {
+            activePillar.classList.remove("active");
+          }
+          
+          if (!activePillar.nextElementSibling) {
+            activePillar = document.querySelector(".home__pillar");
+            inactives.forEach(function(inactive) { inactive.classList.remove("inactive"); });
+          } else {
+            activePillar = activePillar.nextElementSibling;
+          }
 
-            activePillar.classList.add("active");
-          }, 5000);
+          activePillar.classList.add("active");
+        }
       })();
     </script>
   </body>
