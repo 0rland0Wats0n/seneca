@@ -214,7 +214,7 @@ h6 {
 */
 
 body > nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -222,13 +222,20 @@ body > nav {
   color: white;
   text-align: center;
   z-index: 98;
-  min-height: 58px;
+  min-height: 51px;
+}
+
+body > nav .nav__inner {
+  position: relative;
+  width: 100%;
+  min-height: 51px;
 }
 
 .body__home > nav {
   top: initial;
   bottom: 0;
 }
+
 
 body > nav .nav__list {
   position: fixed;
@@ -238,6 +245,7 @@ body > nav .nav__list {
   background-color: #898787;
   -webkit-transition: opacity 200ms linear 200ms;
   transition: opacity 200ms linear 200ms;
+  font-size: 14px;
 }
 
 body > nav .nav__list[data-state="closed"] {
@@ -247,8 +255,8 @@ body > nav .nav__list[data-state="closed"] {
 }
 
 body > nav .nav__list[data-state="open"] {
-  height: calc(100vh - 58px);
-  top: 58px;
+  height: calc(100vh - 51px);
+  top: 51px;
   opacity: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -282,12 +290,12 @@ body > nav .nav__list[data-state="open"] > a {
 }
 
 body > nav .nav__toggle {
-  width: 48px;
-  height: 48px;
-  position: fixed;
-  right: 48px;
-  top: 5px;
+  width: 36px;
+  height: 36px;
+  display: block;
   cursor: pointer;
+  position: absolute;
+  right: 36px;
 }
 
 body > nav .nav__toggle > span {
@@ -653,7 +661,7 @@ form input[type="radio"]:checked + label {
 
 .body__home > nav .nav__toggle {
   bottom: 5px;
-  top: initial;
+  top: 0;
 }
 
 .body__home > main {
@@ -661,11 +669,6 @@ form input[type="radio"]:checked + label {
   height: 100%;
   min-height: 100%;
   position: relative;
-  background-image: url("../images/home_background.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .body__home > main .logo {
@@ -674,24 +677,106 @@ form input[type="radio"]:checked + label {
   max-width: 100%;
   padding: 2em 0 0;
   margin: 0 auto;
+  position: relative;
+  z-index: 99;
 }
 
-.body__home > main > section {
+.body__home > main > section:first-of-type {
   position: absolute;
   width: 100%;
+  height: 100%;
   left: 0;
-  bottom: 60px;
+  bottom: 51px;
   text-align: center;
+  overflow: hidden;
+  background-color: #333;
 }
 
-.body__home > main > section > h5 {
+.body__home > main > section .home__section_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.body__home > main > section:first-of-type .home__pillar {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.15;
+  -webkit-transition: opacity linear 200ms;
+  transition: opacity linear 200ms;
+}
+
+.body__home > main > section:first-of-type .home__pillar.active {
+  opacity: 1;
+}
+
+.body__home > main > section:first-of-type .home__pillar .home__pillar_content {
+  display: none;
+}
+
+.body__home > main > section:first-of-type .home__pillar.active .home__pillar_content {
+  display: block;
+  z-index: 9;
+}
+
+.body__home > main > section .home__pillar h5 {
   padding: 1em 0.5em;
   max-width: 998px;
   margin: 0 auto;
+  font-weight: 500;
 }
 
-.body__home > main > section > .button {
+.body__home>main>section .home__pillar .button {
   margin: 2em auto 4em;
+}
+
+@media (min-width: 720px) {
+  .body__home > main > section:first-of-type {
+    font-size: 0;
+  }
+
+  .body__home > main > section:first-of-type .home__pillar {
+    display: inline-block;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .body__home > main > section:first-of-type .home__pillar .home__pillar_content {
+    position: absolute;
+    max-width: 660px;
+    max-height: 220px;
+    margin: auto;
+    bottom: 60px; left: 0; right: 0;
+  }
+}
+
+@media (min-width: 1080px) {
+  .body__home > main > section:first-of-type .home__pillar {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .body__home > main > section:first-of-type .home__pillar {
+    width: 25%;
+  }
 }
 
 /* 
