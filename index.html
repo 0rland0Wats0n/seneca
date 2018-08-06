@@ -65,5 +65,32 @@
     </main>
 
     <script src="/assets/js/index.js"></script>
+    <script>
+      (function() {
+        var activePillar = document.querySelector(".home__pillar.active"),
+          switchInterval = setInterval(function() {
+            var { innerWidth } = window;
+            var inactives = document.querySelectorAll(".home__pillar.inactive");
+
+            if (innerWidth >= 720 && innerWidth < 1080) {
+              activePillar.classList.remove("active");
+              
+              if (inactives.length < 2)
+                activePillar.classList.add("inactive");
+            } else {
+              activePillar.classList.remove("active");
+            }
+            
+            if (!activePillar.nextElementSibling) {
+              activePillar = document.querySelector(".home__pillar");
+              inactives.forEach(function(inactive) { inactive.classList.remove("inactive"); });
+            } else {
+              activePillar = activePillar.nextElementSibling;
+            }
+
+            activePillar.classList.add("active");
+          }, 5000);
+      })();
+    </script>
   </body>
 </html>
