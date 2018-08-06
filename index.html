@@ -35,7 +35,7 @@
     <main>
       <img class="logo" src="/assets/images/seneca-logo.png" alt="Seneca Logo" />
       <section>
-        <div class="home__section_container">
+        <div class="home__section_container pillars__container">
           <div class="home__pillar active" style="background-image: url(assets/images/bitmap@3x.jpg)">
             <div class="home__pillar_content">
               <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
@@ -68,30 +68,67 @@
     <script>
       (function() {
         var activePillar = document.querySelector(".home__pillar.active");
-        var switchInterval = setInterval(function() { handlePillarSwitch(); }, 5000);
-
-        var handlePillarSwitch = function() {
+        
+        var handlePillarSwitch = function(direction) {
           var { innerWidth } = window;
           var inactives = document.querySelectorAll(".home__pillar.inactive");
-
-          if (innerWidth >= 720 && innerWidth < 1080) {
-            activePillar.classList.remove("active");
-            
-            if (inactives.length < 2)
-              activePillar.classList.add("inactive");
-          } else {
-            activePillar.classList.remove("active");
-          }
+          var pillarsNodeList = document.querySelectorAll(".home__pillar");
+          var pillars = Array.from(pillarsNodeList);
           
-          if (!activePillar.nextElementSibling) {
-            activePillar = document.querySelector(".home__pillar");
-            inactives.forEach(function(inactive) { inactive.classList.remove("inactive"); });
+          activePillar.classList.remove("active");
+          activePillar.classList.add("inactive");
+          
+          if (direction === "goNext") {
+            if (!activePillar.nextElementSibling) {
+              activePillar = document.querySelector(".home__pillar");
+            } else {
+              activePillar = activePillar.nextElementSibling;
+            }
           } else {
-            activePillar = activePillar.nextElementSibling;
+            if (!activePillar.previousElementSibling) {
+              activePillar = pillars[3];
+            } else {
+              activePillar = activePillar.previousElementSibling;
+            }
           }
 
           activePillar.classList.add("active");
+          activePillar.classList.remove("inactive");
         }
+        
+        var x0 = null;
+        var switchInterval = setInterval(function() { handlePillarSwitch("goNext"); }, 5000);
+        var pillarsContainer = document.querySelector(".pillars__container");
+
+        var unify = function(e) { return e.changedTouches ? e.changedTouches[0] : e };
+
+        var lock = function(e) {
+          clearInterval(switchInterval);
+          x0 = unify(e).clientX; 
+        };
+
+        var switchPillar = function(e) {
+          if(x0 || x0 === 0) {
+            var s = Math.sign(unify(e).clientX - x0);
+            
+            if (Math.abs(unify(e).clientX - x0) > 50) {
+              if (s < 0) {
+                handlePillarSwitch("goNext");
+                switchInterval = setInterval(function() { handlePillarSwitch("goNext"); }, 5000);
+              } else {
+                handlePillarSwitch("goPrevious");
+                switchInterval = setInterval(function() { handlePillarSwitch("goPrevious"); }, 5000);
+              }
+            }
+          
+            x0 = null
+          }
+        }
+
+        pillarsContainer.addEventListener("mousedown", lock, false);
+        pillarsContainer.addEventListener("touchstart", lock, false);
+        pillarsContainer.addEventListener("mouseup", switchPillar, false);
+        pillarsContainer.addEventListener("touchend", switchPillar, false);
       })();
     </script>
   </body>
