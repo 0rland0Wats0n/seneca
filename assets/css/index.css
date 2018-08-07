@@ -37,6 +37,10 @@ body {
   position: relative;
 }
 
+body > main {
+  display: block;
+}
+
 a,
 a:focus,
 a:active,
@@ -1137,6 +1141,7 @@ form input[type="radio"]:checked + label {
 }
 
 .body__blog > main .blog__other_items > section .blog__item_small .blog__item_content {
+  max-width: 460px;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 460px;
           flex: 1 1 460px;
