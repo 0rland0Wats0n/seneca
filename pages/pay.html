@@ -142,13 +142,13 @@
     </footer>
 
     <script type="text/javascript">
-      document.getElementById("card_number").addEventListener("keyup", e => {
-        let cards = document.querySelectorAll(".form__cc_group .cc"), 
-          visa = document.querySelector(".cc__visa"),
-          mastercard = document.querySelector(".cc__mastercard"),
-          amex = document.querySelector(".cc__amex"),
-          discover = document.querySelector(".cc__discover"),
-          { value } = e.target;
+      document.getElementById("card_number").addEventListener("keyup", function(e) {
+        var cards = document.querySelectorAll(".form__cc_group .cc"); 
+          var visa = document.querySelector(".cc__visa");
+          var mastercard = document.querySelector(".cc__mastercard");
+          var amex = document.querySelector(".cc__amex");
+          var discover = document.querySelector(".cc__discover");
+          var value = e.target.value;
         
         if (isVisa(value))
           visa.classList.add("active");
@@ -163,17 +163,17 @@
           discover.classList.add("active");
 
         if (!isVisa(value) && !isMastercard(value) && !isAmex(value) && !isDiscover(value))
-          cards.forEach(card => card.classList.remove("active"));
+          cards.forEach(function(card) { card.classList.remove("active") });
       });
 
-      const isVisa = value => {
+      var isVisa = function(value) {
         if (value.length > 19)
           return false;
 
         return value[0] === "4";
       }
 
-      const isMastercard = value => {
+      var isMastercard = function(value) {
         if (value.length > 16)
           return false;
 
@@ -184,11 +184,11 @@
         );
       }
 
-      const isDiscover = value => {
+      var isDiscover = function(value) {
         if (value.length < 6 || value.length > 16)
           return false;
         
-        const tVal = parseInt(value.slice(0, 7));
+        var tVal = parseInt(value.slice(0, 7));
 
         return (
           tVal === 601174 ||
@@ -200,7 +200,7 @@
         )
       }
 
-      const isAmex = value => {
+      var isAmex = function(value) {
         if (value.length > 15)
           return false;
 

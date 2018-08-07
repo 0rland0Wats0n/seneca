@@ -530,9 +530,9 @@ form textarea:active {
   outline: none;
 }
 
-form input[type]:focus + label,
-form input[type]:active + label,
-form input[type]:valid + label {
+form input:not([type="radio"]):focus + label,
+form input:not([type="radio"]):active + label,
+form input:not([type="radio"]):valid + label {
   -webkit-transform: translateY(-170%);
           transform: translateY(-170%);
 }
@@ -930,9 +930,9 @@ form input[type="radio"]:checked + label {
   padding: 8px 16px;
 }
 
-.body__donate > form input[type]:focus + label,
-.body__donate > form input[type]:active + label,
-.body__donate > form input[type]:valid + label {
+.body__donate > form input:not([type="radio"]):focus + label,
+.body__donate > form input:not([type="radio"]):active + label,
+.body__donate > form input:not([type="radio"]):valid + label {
   -webkit-transform: translateY(-133%);
           transform: translateY(-133%);
 }
@@ -941,7 +941,7 @@ form input[type="radio"]:checked + label {
   max-width: 1140px;
   margin: 0 auto;
   padding: 2em;
-  text-align: end;
+  text-align: right;
   color: white;
 }
 
