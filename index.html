@@ -82,8 +82,6 @@
         var activePillar = document.querySelector(".home__pillar.active");
         
         var handlePillarSwitch = function(direction) {
-          var innerWidth = window.innerWidth;
-          var inactives = document.querySelectorAll(".home__pillar.inactive");
           var pillarsNodeList = document.querySelectorAll(".home__pillar");
           var pillars = [].slice.call(pillarsNodeList);
           
@@ -115,15 +113,16 @@
         var unify = function(e) { return e.changedTouches ? e.changedTouches[0] : e };
 
         var lock = function(e) {
-          clearInterval(switchInterval);
           x0 = unify(e).clientX; 
         };
-
+        
         var switchPillar = function(e) {
           if(x0 || x0 === 0) {
             var s = Math.sign(unify(e).clientX - x0);
             
             if (Math.abs(unify(e).clientX - x0) > 50) {
+              clearInterval(switchInterval);
+              
               if (s < 0) {
                 handlePillarSwitch("goNext");
                 switchInterval = setInterval(function() { handlePillarSwitch("goNext"); }, 5000);

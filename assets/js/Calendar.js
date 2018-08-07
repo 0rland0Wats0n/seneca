@@ -50,7 +50,7 @@ Calendar.prototype.renderDays = function() {
   var days = [];
   var cells = this.firstDay >= 5 ? 42 : 35;
 
-  for (let i = 0; i < cells; i++) {
+  for (var i = 0; i < cells; i++) {
     if (i < this.firstDay) {
       days.push("<span class='calender__day type__fade'>" + (prevMonthDays - this.firstDay + i + 1) + "</span>");
       continue;

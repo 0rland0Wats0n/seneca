@@ -656,6 +656,7 @@ form input[type="radio"]:checked + label {
 .calendar .calendar__days > span.current {
   border: 2px solid white;
   border-radius: 50%;
+  max-width: 48px;
 }
 
 /* 
@@ -682,7 +683,7 @@ form input[type="radio"]:checked + label {
   margin: auto;
   top: 2em; left: 0; right: 0;
   width: 100vw;
-  z-index: 99;
+  z-index: 98;
 }
 
 .body__home > main > section:first-of-type {
@@ -707,7 +708,6 @@ form input[type="radio"]:checked + label {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
-  pointer-events: none;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2314,6 +2314,7 @@ form input[type="radio"]:checked + label {
   letter-spacing: 2px;
   line-height: 1.15;
   padding-left: 28px;
+  display: block;
 }
 
 .body__events > main > section .events__upcoming .event__upcoming .event__upcoming_date > p {
@@ -2329,6 +2330,7 @@ form input[type="radio"]:checked + label {
       -ms-flex: 0 1 300px;
           flex: 0 1 300px;
   padding: 0 28px;
+  display: block;
 }
 
 .body__events > main > section .events__upcoming .event__upcoming .event__upcoming_details > p {
@@ -2343,17 +2345,6 @@ form input[type="radio"]:checked + label {
 .body__events footer {
   padding: 2em;
   text-align: right;
-}
-
-@media (min-width: 845px) {
-  .body__events {
-    overflow-y: hidden;
-  }
-  
-  .body__events > main > section:last-of-type {
-    height: 100%;
-    overflow-y: auto;
-  }
 }
 
 @media (min-width: 1440px) {
