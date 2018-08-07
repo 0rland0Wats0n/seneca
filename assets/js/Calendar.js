@@ -6,6 +6,10 @@ function Calendar(container, month, year, day) {
   this.days = this.getNumberOfDays();
   this.firstDay = this.getFirstDay();
 
+  // event specific
+  this.eventMonth = month;
+  this.eventDay = day;
+
   this.container.classList.add("calendar");
 
   this.container.innerHTML = this.createHTMLString([
@@ -61,7 +65,8 @@ Calendar.prototype.renderDays = function() {
       continue;
     }
 
-    if ((this.day === i - this.firstDay + 1) && this.month === new Date().getMonth()) {
+    if (((new Date().getDate() === i - this.firstDay + 1) && this.month === new Date().getMonth()) ||
+    ((this.eventDay === i - this.firstDay + 1) && this.month === this.eventMonth)) {
       days.push("<span class='calender__day current'>" + (i - this.firstDay + 1) + "</span>");
     } else {
       days.push("<span class='calender__day'>" + (i - this.firstDay + 1) + "</span>");

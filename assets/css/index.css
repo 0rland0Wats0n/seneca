@@ -76,6 +76,11 @@ button,
           box-sizing: border-box;
 }
 
+.button__transparent {
+  border: 2px solid #898787;
+  background-color: rgba(0,0,0,0);
+}
+
 .bg__red {
   background-color: #c12333;
 }
@@ -177,6 +182,8 @@ h6 {
 .type__color_white {
   color: white;
 }
+
+.type__color_dark { color: #898787 !important; }
 
 .type__center {
   text-align: center;
@@ -645,7 +652,11 @@ form input[type="radio"]:checked + label {
       -ms-flex: 0 1 14.2857143%;
           flex: 0 1 14.2857143%;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.calendar .calendar__days>span {
+  font-size: 20px;
 }
 
 .calendar .calendar__days > span {
@@ -2422,4 +2433,88 @@ form input[type="radio"]:checked + label {
         -ms-flex-align: end;
             align-items: flex-end;
   }
+}
+
+/* 
+  Event
+  ==================
+*/
+
+.body__events.event {
+  background: white;
+  color: #a7a7a7;
+}
+
+.body__events.event > main {
+  max-width: 1440px;
+  padding: 2em;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap-reverse;
+          flex-flow: row wrap-reverse;
+}
+
+.body__events.event > main > section:first-of-type,
+.body__events.event > main > section:last-of-type {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.body__events.event > main > section:first-of-type {
+  min-width: 400px;
+}
+
+.body__events.event>main>section .event_calendar.calendar .calendar__days>span.current {
+  border-color: #a7a7a7;
+}
+
+.body__events.event  p {
+  color: #a7a7a7;
+}
+
+.body__events.event > main > section .events__event {
+  max-width: 350px;
+}
+
+.body__events.event > main > section .events__upcoming .event__upcoming .event__upcoming_details {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 460px;
+          flex: 0 1 460px;
+}
+
+.body__events.event > main > section .events__upcoming .event__upcoming .event__upcoming_details > p:not(:first-child) {
+  margin-bottom: 2em;
+}
+
+@media (min-width: 1440px) {
+  .body__events.event>main>section:first-of-type,
+  .body__events.event>main>section:last-of-type {
+    max-width: 50%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+  }
+
+  .body__events.event > main > section:first-of-type {
+    padding-right: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .body__events.event > main > section:first-of-type > div {
+    margin: 0;
+  }
+
+  .body__events.event > main > section:last-of-type {
+    padding: 106px 0 48px 100px;
+  }
+
+  .body__events > main > section .events__upcoming .event__upcoming .event__upcoming_details {
+    padding-right: 0;
+  } 
 }

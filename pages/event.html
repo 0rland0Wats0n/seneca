@@ -1,0 +1,108 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,900" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/index.css">
+
+    <title>Event | Seneca</title>
+  </head>
+
+  <body class="body__events event">
+    <nav>
+      <div class="nav__list" data-state="closed">
+        <a href="/pages/about.html" title="About Us">about us</a>
+        <a href="#" title="Programs">programs</a>
+        <a href="/pages/trainings.html" title="Trainings">trainings</a>
+        <a href="/pages/adopt.html" title="Adopt">adopt</a>
+        <a href="/pages/events.html" title="Events">events</a>
+        <a href="/pages/donate.html" title="Give Back">give back</a>
+        <a href="/pages/contact.html" title="Contact">contact</a>
+      </div>
+      <span class="nav__toggle" data-state="closed">
+        <span></span>
+      </span>
+    </nav>
+    <main>
+      <section>
+        <div>
+          <div class="event_calendar"></div>
+          <div class="events__event">
+            <span class="p__group type__caption">
+              <p class="type__uppercase">SENECA ANNUAL CHARITY PICNIC</p>
+              <p>  
+                The Cal Alumni Club of Washington DC invites you to join us for food, friendship, and Cal Spirit at our Annual Picnic and Summer Welcome Party! We are excited to host the incoming class of 2022 (and their families) from the DC area who are getting ready for their first Cal Welcome Week. Additionally, we welcome current students who are participating in the Cal in the Capital summer internship program!
+              </p>
+            </span>
+            <a href="#" class="button button__transparent">more details</a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="events__upcoming">
+          <div class="event__upcoming">
+            <span class="event__upcoming_date">
+              <p class="type__uppercase type__caption">oct</p>
+              <h3>12</h3>
+            </span>
+            <span class="event__upcoming_details">
+              <p class="type__bold type__uppercase">BREASTFEEDING MONTH</p>
+              <p>
+                Raise breastfeeding awareness with new parent resources and distinctive gifts to please new moms, welcome baby, and promote your hospital&apos;s services to families. We offer creative ways to congratulate new mothers, along with helpful personalized products to educate and communicate the benefits of breastfeeding to everyone in your community. From registration to delivery to arrival at home, find promotional products that make a positive impression, including custom diaper bags and newborn apparel, blankets and infant accessories, amenity kits, and more new mom gifts.
+              </p>
+              <p>
+                My family started with a joke. My wife Beth and I had been talking for years about whether we should have kids. For the longest time we just felt like we couldn’t afford it. Then I sold a couple of scripts and was feeling like I might have a career, but we were in our 40s and worried we had left it too long. We knew kids would make our life bigger, so one day I joked, “Why don’t we just adopt a five-year-old and it will be like we got started five years ago?” Beth called me on it. She said we should consider adoption.
+              </p>
+              <p>
+                We did some research online and realized how many older kids were in foster care. We weren’t sure if we were the right people to take them on, so we started going to classes organized by Seneca Family of Agencies, a nonprofit in California that offers adoption, foster care, kinship care and mental health services for kids and families.
+              </p>
+              <p>
+                In 2012 we got three siblings: an 18-month-old, a three-year-old and a six-year-old. We were told they’d been removed from their mother because she had a drug problem. I wasn’t worried. I thought, “Oh, I can do this. I’m going to be great at this.” Then they showed up and it was like: “We’ve made a horrible, horrible mistake.” The first few months were really rough. We would lie in bed at night and just try to figure out some way that we could get them out of our house. They were completely ruining all of our fun. When you get three at once you don’t have time to get your sea legs. It was kind of like babysitting someone else’s kids, but forever.
+              </p>
+              <p>
+                Then one morning I woke up early and I realized, “Oh my God, I kind of miss them right now, and I’m excited for them to come in. What the hell is happening?”
+              </p>
+              <p>
+                Our daughter was the toughest. Even if she hadn’t been in the foster-care system, she was three, which means she’s difficult on a good day. She would throw five to tenExorcist-level tantrums every day. And she especially didn’t want to have anything to do with me. One day she was throwing a fit about going to the hardware store and I got down on one knee in front of her and I screamed, “You are not in charge around here. I am. Not you, me. You understand?” I’m not proud of this. I didn’t know that I had that kind of temper. Kids push your buttons in ways that you just can’t expect.</p>
+              </p>
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+          <nav>
+            <a href="/pages/blog.html">blog</a>
+            <a href="/pages/careers.html">careers</a>
+            <a href="#">policy</a>
+            <i class="fas fa-share-alt"></i>
+            <a href="#" title="Share on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" title="Share on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" title="Share on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </nav>
+        </footer>
+    <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/Calendar.js"></script>
+    <script>
+      var eventCalendar = new Calendar(".event_calendar", 8, 2018, 4).render()
+    </script>
+  </body>
+</html>
