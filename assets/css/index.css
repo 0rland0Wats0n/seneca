@@ -1411,9 +1411,24 @@ form input[type="radio"]:checked + label {
   }
 }
 
+@-webkit-keyframes overflow {
+  to { overflow: visible; }
+}
+
+@-webkit-keyframes overflowAnim {
+  to { overflow: visible; }
+}
+
+@keyframes overflowAnim {
+  to { overflow: auto; }
+}
+
 @media (min-width: 1080px) {
   .body__about {
     position: relative;
+    overflow: hidden;
+      -webkit-animation: overflowAnim 200ms linear 1200ms forwards;
+              animation: overflowAnim 200ms linear 1200ms forwards;
   }
 
   .body__about > main {
@@ -1430,15 +1445,17 @@ form input[type="radio"]:checked + label {
       -webkit-box-pack: start;
           -ms-flex-pack: start;
               justify-content: flex-start;
-      overflow-x: hidden;
   }
 
   .body__about > main > section:first-of-type {
     max-width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    -webkit-animation: slideLeft 200ms linear 1s forwards;
-            animation: slideLeft 200ms linear 1s forwards;
+    -webkit-animation: slideLeft 400ms linear 1s forwards;
+            animation: slideLeft 400ms linear 1s forwards;
   }
 
   .body__about > main > section .about__heading_content {
