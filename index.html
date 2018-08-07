@@ -76,6 +76,16 @@
         }
         return x > 0 ? 1 : -1;
       }
+      
+      // forEach polyfill
+      if (window.NodeList && !NodeList.prototype.forEach) {
+          NodeList.prototype.forEach = function (callback, thisArg) {
+              thisArg = thisArg || window;
+              for (var i = 0; i < this.length; i++) {
+                  callback.call(thisArg, this[i], i, this);
+              }
+          };
+      }
     </script>
     <script>
       (function() {
@@ -136,6 +146,23 @@
           }
         }
 
+        document.querySelectorAll(".home__pillar").forEach(function(pillar) {
+          pillar.addEventListener("mouseover", function(e) {
+            if (e.currentTarget.classList.contains("active") ||
+              window.innerWidth < 720)
+              return;
+              
+            clearInterval(switchInterval);
+            activePillar.classList.remove("active");
+            activePillar.classList.add("inactive");
+            
+            activePillar = e.currentTarget;
+
+            activePillar.classList.add("active");
+            activePillar.classList.remove("inactive");
+            switchInterval = setInterval(function() { handlePillarSwitch("goNext"); }, 5000);
+          }, false)
+        });
         pillarsContainer.addEventListener("mousedown", lock, false);
         pillarsContainer.addEventListener("touchstart", lock, false);
         pillarsContainer.addEventListener("mouseup", switchPillar, false);
