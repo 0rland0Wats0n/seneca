@@ -293,7 +293,7 @@ body > nav .nav__list a {
   text-transform: uppercase;
   display: block;
   padding: 1em 0.85em;
-  letter-spacing: 2.3;
+  letter-spacing: 2.3px;
 }
 
 body > nav .nav__list[data-state="open"] > a {
