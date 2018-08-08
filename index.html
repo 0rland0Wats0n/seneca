@@ -17,7 +17,7 @@
     <title>Seneca</title>
   </head>
   <body class="body__home">
-    <nav>
+    <!-- <nav>
       <div class="nav__inner">
         <div class="nav__list" data-state="closed">
           <a href="/pages/about.html" title="About Us">about us</a>
@@ -28,39 +28,30 @@
           <a href="/pages/donate.html" title="Give Back">give back</a>
           <a href="/pages/contact.html" title="Contact">contact</a>
         </div>
-        <span class="nav__toggle" data-state="closed">
-          <span></span>
-        </span>
       </div>
-    </nav>
+      <span class="nav__toggle" data-state="closed">
+        <span></span>
+      </span>
+    </nav> -->
     <main>
       <span class="logo">
         <img src="/assets/images/seneca-logo.png" alt="Seneca Logo" />
       </span>
+      <span class="home__cta">
+        <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
+        <a href="/pages/donate.html" class="button">donate</a>
+      </span>
       <section>
         <div class="home__section_container pillars__container">
-          <div class="home__pillar active" style="background-image: url(assets/images/bitmap@3x.jpg)">
-            <div class="home__pillar_content">
-              <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
-              <a href="/pages/donate.html" class="button">donate</a>
-            </div>
-          </div>
-          <div class="home__pillar" style="background-image: url(assets/images/bitmapCopy3.jpg)">
-            <div class="home__pillar_content">
-              <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
-              <a href="/pages/donate.html" class="button">donate</a>
-            </div>
-          </div>
-          <div class="home__pillar" style="background-image: url(assets/images/bitmapCopy2.jpg)">
-            <div class="home__pillar_content">
-              <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
-              <a href="/pages/donate.html" class="button">donate</a>
-            </div>
-          </div>
-          <div class="home__pillar" style="background-image: url(assets/images/bitmap.png)">
-            <div class="home__pillar_content">
-              <h5 class="type__spacey type__uppercase type__color_white">we are unconditional</h5>
-              <a href="/pages/donate.html" class="button">donate</a>
+          <div class="home__pillar">
+            <div class="home__pillar_image" style="background-image: url(assets/images/bitmapCopy2@3x.jpg)"></div>
+            <div class="home__pillar_content bg__yellow">
+              <h4 class="type__color_white type__uppercase">innovation</h4>
+              <span class="p__group">
+                <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>
+                <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. </p>
+              </span>
+              <a href="#" class="button button__squarer button__bold">innovation</a>
             </div>
           </div>
         </div>
@@ -88,86 +79,7 @@
       }
     </script>
     <script>
-      (function() {
-        var activePillar = document.querySelector(".home__pillar.active");
-        
-        var handlePillarSwitch = function(direction) {
-          var pillarsNodeList = document.querySelectorAll(".home__pillar");
-          var pillars = [].slice.call(pillarsNodeList);
-          
-          activePillar.classList.remove("active");
-          activePillar.classList.add("inactive");
-          
-          if (direction === "goNext") {
-            if (!activePillar.nextElementSibling) {
-              activePillar = document.querySelector(".home__pillar");
-            } else {
-              activePillar = activePillar.nextElementSibling;
-            }
-          } else {
-            if (!activePillar.previousElementSibling) {
-              activePillar = pillars[3];
-            } else {
-              activePillar = activePillar.previousElementSibling;
-            }
-          }
-
-          activePillar.classList.add("active");
-          activePillar.classList.remove("inactive");
-        }
-        
-        var x0 = null;
-        var switchInterval = setInterval(function() { handlePillarSwitch("goNext"); }, 5000);
-        var pillarsContainer = document.querySelector(".pillars__container");
-
-        var unify = function(e) { return e.changedTouches ? e.changedTouches[0] : e };
-
-        var lock = function(e) {
-          x0 = unify(e).clientX; 
-        };
-        
-        var switchPillar = function(e) {
-          if(x0 || x0 === 0) {
-            var s = Math.sign(unify(e).clientX - x0);
-            
-            if (Math.abs(unify(e).clientX - x0) > 50) {
-              clearInterval(switchInterval);
-              
-              if (s < 0) {
-                handlePillarSwitch("goNext");
-                switchInterval = setInterval(function() { handlePillarSwitch("goNext"); }, 5000);
-              } else {
-                handlePillarSwitch("goPrevious");
-                switchInterval = setInterval(function() { handlePillarSwitch("goPrevious"); }, 5000);
-              }
-            }
-          
-            x0 = null
-          }
-        }
-
-        document.querySelectorAll(".home__pillar").forEach(function(pillar) {
-          pillar.addEventListener("mouseover", function(e) {
-            if (e.currentTarget.classList.contains("active") ||
-              window.innerWidth < 720)
-              return;
-              
-            clearInterval(switchInterval);
-            activePillar.classList.remove("active");
-            activePillar.classList.add("inactive");
-            
-            activePillar = e.currentTarget;
-
-            activePillar.classList.add("active");
-            activePillar.classList.remove("inactive");
-            switchInterval = setInterval(function() { handlePillarSwitch("goNext"); }, 5000);
-          }, false)
-        });
-        pillarsContainer.addEventListener("mousedown", lock, false);
-        pillarsContainer.addEventListener("touchstart", lock, false);
-        pillarsContainer.addEventListener("mouseup", switchPillar, false);
-        pillarsContainer.addEventListener("touchend", switchPillar, false);
-      })();
+      
     </script>
   </body>
 </html>
