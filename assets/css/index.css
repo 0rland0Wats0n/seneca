@@ -904,7 +904,7 @@ form input[type="radio"]:checked + label {
     background-color: #025ea7;
   }
   
-  .body__home > main > section .home__pillar .home__pillar_image:hover::before {
+  .body__home > main > section .home__pillar:not([class~="active"]) .home__pillar_image:hover::before {
     -webkit-transition: width 1s linear;
             transition: width 1s linear;
     width: 100%;
@@ -968,15 +968,15 @@ form input[type="radio"]:checked + label {
   }
 
   .body__home > main > section .home__pillar.active:nth-child(2) .pillar__close {
-    color: #be202e;
+    color: #9B1C29;
   }
 
   .body__home > main > section .home__pillar.active:nth-child(3) .pillar__close {
-    color: #067a3f;
+    color: #045B2F;
   }
 
   .body__home > main > section .home__pillar.active:last-child .pillar__close {
-    color: #025ea7;
+    color: #09335B;
   }
 }
 
