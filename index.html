@@ -11,6 +11,10 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,900" rel="stylesheet">
 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous">
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="/assets/css/index.css">
 
@@ -50,6 +54,9 @@
             </span>
             <a href="#" class="button button__squarer button__bold">innovation</a>
           </div>
+          <span class="pillar__close">
+            <i class="fas fa-times"></i>
+          </span>
         </div>
         <div class="home__pillar">
           <div class="home__pillar_image" style="background-image: url(assets/images/pillar__education.jpg)"></div>
@@ -72,6 +79,9 @@
             </span>
             <a href="#" class="button button__squarer button__bold">mental health</a>
           </div>
+          <span class="pillar__close">
+            <i class="fas fa-times"></i>
+          </span>
         </div>
         <div class="home__pillar">
           <div class="home__pillar_image" style="background-image: url(assets/images/pillar__permanence.jpg)"></div>
@@ -83,6 +93,9 @@
             </span>
             <a href="#" class="button button__squarer button__bold">permanence</a>
           </div>
+          <span class="pillar__close">
+            <i class="fas fa-times"></i>
+          </span>
         </div>
       </section>
     </main>
@@ -120,6 +133,35 @@
           homeBody.classList.remove("at_bottom");
         }
       });
+
+      document.querySelectorAll(".pillar__close").forEach(function(closeButton) {
+        closeButton.addEventListener("click", function(e) {
+          e.currentTarget.parentElement.classList.replace("active", "inactive");
+        });
+      });
+
+      var hoverTime;
+
+      document.querySelectorAll(".home__pillar_image").forEach(function(pillarImage) {
+        pillarImage.addEventListener("mouseover", function(e) {
+          var parent = e.currentTarget.parentElement;
+
+          if (parent.classList.contains("active"))
+            return;
+
+          hoverTime = setTimeout(function() {
+            if (parent.classList.contains("inactive")) {
+              parent.classList.replace("inactive", "active");
+            } else {
+              parent.classList.add("active");
+            }
+          }, 1000)
+        });
+
+        pillarImage.addEventListener("mouseleave", function(e) {
+          clearTimeout(hoverTime);
+        });
+      })
     </script>
   </body>
 </html>
