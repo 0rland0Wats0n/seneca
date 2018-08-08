@@ -25,7 +25,7 @@
 <body class="body__home alternate">
   <nav data-state="closed">
     <div class="nav__list" data-state="closed">
-      <a href="#" title="Home">home</a>
+      <a href="/index.html" title="Home">home</a>
       <a href="/pages/about.html" title="About Us">about us</a>
       <a href="/pages/trainings.html" title="Trainings">trainings</a>
       <a href="/pages/adopt.html" title="Adopt">adopt</a>
@@ -173,6 +173,8 @@
     document.querySelectorAll(".pillar__close").forEach(function (closeButton) {
       closeButton.addEventListener("click", function (e) {
         e.currentTarget.parentElement.classList.remove("active");
+        e.currentTarget.parentElement.parentElement.classList.remove("active");
+        
       });
     });
 
@@ -188,6 +190,7 @@
         hoverTime = setTimeout(function () {
           content.classList.remove("loading");
           content.classList.add("active");
+          content.parentElement.classList.add("active");
         }, 1000)
       });
 
@@ -201,6 +204,7 @@
 
         content.classList.remove("loading");
         content.classList.add("active");
+        content.parentElement.classList.add("active");
       });
     });
 
@@ -210,6 +214,7 @@
           return;
 
         e.currentTarget.classList.remove("active");
+        e.currentTarget.parentElement.classList.remove("active");
       });
     });
   </script>

@@ -889,7 +889,7 @@ form input[type="radio"]:checked + label {
   .body__home > main > section .home__pillar .home__pillar_image::before {
     content: "";
     width: 0;
-    height: 10px;
+    height: 5px;
     position: absolute;
     top: 0;
     left: 0;
@@ -932,16 +932,6 @@ form input[type="radio"]:checked + label {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 30%;
             flex: 0 0 30%;
-  }
-
-  .body__home > main > section .home__pillar:not([class~="active"]):hover .home__pillar_image {
-    cursor: pointer;
-    -webkit-transition: -webkit-transform 200ms linear;
-    transition: -webkit-transform 200ms linear;
-    transition: transform 200ms linear;
-    transition: transform 200ms linear, -webkit-transform 200ms linear;
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
   }
         
   .body__home > main > section .home__pillar.active .home__pillar_content {
@@ -1099,7 +1089,7 @@ form input[type="radio"]:checked + label {
             align-items: center;
   }
 
-  .body__home.alternate > main > header .pillars__switcher > li {
+  .body__home.alternate > main > header .pillars__switcher > li:not([class="divider"]) {
     color: rgba(255,255,255,.63);
     font-size: 20px;
     display: block;
@@ -1108,6 +1098,7 @@ form input[type="radio"]:checked + label {
     letter-spacing: 2.1px;
     cursor: pointer;
     position: relative;
+    width: 185px;
   }
 
   .body__home.alternate > main > header .pillars__switcher > li.divider {
@@ -1120,10 +1111,10 @@ form input[type="radio"]:checked + label {
   .body__home.alternate > main > header .pillars__switcher > li:not([class="divider"])::before {
     content: "";
     width: 0;
-    height: 10px;
+    height: 1px;
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -5px;
     -webkit-transition: width 200ms ease-in;
     transition: width 200ms ease-in;
   }
@@ -1157,6 +1148,13 @@ form input[type="radio"]:checked + label {
   .body__home.alternate > main > section {
     position: static;
     display: block;
+    -webkit-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+  }
+
+  .body__home.alternate > main > section.active {
+    position: absolute;
+    background-color: #333;
   }
 
   .body__home.alternate > main > section .home__pillar {
@@ -1186,12 +1184,13 @@ form input[type="radio"]:checked + label {
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .body__home.alternate > main > section .home__pillar .home__pillar_content > h4 {
+    margin-bottom: 41px;
   }
 
   .body__home.alternate > main > section .home__pillar[data-pillar="mental health"],
