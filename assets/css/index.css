@@ -929,6 +929,16 @@ form input[type="radio"]:checked + label {
         -ms-flex: 0 0 30%;
             flex: 0 0 30%;
   }
+
+  .body__home > main > section .home__pillar:not([class~="active"]):hover .home__pillar_image {
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 200ms linear;
+    transition: -webkit-transform 200ms linear;
+    transition: transform 200ms linear;
+    transition: transform 200ms linear, -webkit-transform 200ms linear;
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
         
   .body__home > main > section .home__pillar.active .home__pillar_content {
     opacity: 1;
