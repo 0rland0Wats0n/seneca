@@ -115,6 +115,10 @@ button,
   background-color: #105faa;
 }
 
+.bg__green {
+  background-color: #067a3f;
+}
+
 body footer {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
