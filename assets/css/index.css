@@ -27,13 +27,12 @@
 }
 
 html {
-  max-height: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background-color: white;
   font-family: Helvetica, san-serif;
   font-size: 16px;
@@ -250,18 +249,14 @@ h6 {
 */
 
 body > nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   color: #898787;
   background-color: white;
   text-align: center;
   z-index: 998;
-}
-
-body > nav .nav__inner {
-  position: relative;
-  width: 100%;
+  min-height: 67px;
 }
 
 .body__home > nav {
@@ -269,6 +264,9 @@ body > nav .nav__inner {
   bottom: 0;
 }
 
+body > nav[data-state="open"] {
+  height: 100%;
+}
 
 body > nav .nav__list {
   width: 100%;
@@ -303,6 +301,7 @@ body > nav .nav__list[data-state="open"] {
 
 body.body__home > nav .nav__list[data-state="open"] {
   top: 0;
+  height: 100%;
 }
 
 body > nav .nav__list a {
@@ -327,6 +326,15 @@ body > nav .nav__toggle {
   cursor: pointer;
   position: absolute;
   right: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body > nav .nav__toggle > span {
@@ -335,7 +343,7 @@ body > nav .nav__toggle > span {
   height: 3px;
   border-radius: 3px;
   background-color: #898787;
-  margin: 23px auto;
+  margin: 33px auto;
   position: relative;
   -webkit-transition: height linear 100ms;
   transition: height linear 100ms;
@@ -360,22 +368,22 @@ body > nav .nav__toggle > span::after {
 body > nav .nav__toggle > span::before { top: -11px; }
 body > nav .nav__toggle > span::after { top: 11px; }
 
-body > nav .nav__list[data-state="open"] + .nav__toggle > span {
+body > nav .nav__toggle[data-state="open"] > span {
   height: 0;
 }
 
-body > nav .nav__list[data-state="open"] + .nav__toggle > span::before,
-body > nav .nav__list[data-state="open"] + .nav__toggle > span::after {
+body > nav .nav__toggle[data-state="open"] > span::before,
+body > nav .nav__toggle[data-state="open"] > span::after {
   top: 0;
   left: 0;
 }
 
-body > nav .nav__list[data-state="open"] + .nav__toggle > span::before {
+body > nav .nav__toggle[data-state="open"] > span::before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-body > nav .nav__list[data-state="open"] + .nav__toggle > span::after {
+body > nav .nav__toggle[data-state="open"] > span::after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
@@ -698,15 +706,23 @@ form input[type="radio"]:checked + label {
   =====================
 */
 
+.body__home > nav {
+  -webkit-transform: translateY(67px);
+          transform: translateY(67px);
+}
+
+.body__home.at_bottom > nav {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .body__home > nav .nav__toggle {
-  bottom: 5px;
-  top: 0;
+  bottom: 15px;
+  top: auto;
 }
 
 .body__home > main {
   width: 100%;
-  height: 100%;
-  min-height: 100%;
   position: relative;
   background-color: #2f2d2d;
 }
@@ -751,6 +767,10 @@ form input[type="radio"]:checked + label {
 .body__home > main > section .home__pillar .home__pillar_content {
   padding: 82px 2em 4em;
   text-align: center;
+}
+
+.body__home > main > section .home__pillar:last-child .home__pillar_content {
+  padding-bottom: 7em;
 }
 
 .body__home > main > section .home__pillar .home__pillar_content > h4 {
