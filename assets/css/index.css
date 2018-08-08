@@ -1938,10 +1938,16 @@ form input[type="radio"]:checked + label {
             box-sizing: border-box;
     -webkit-animation: slideLeft 400ms linear 1s forwards;
             animation: slideLeft 400ms linear 1s forwards;
-  }
-
-  .body__about > main > section .about__heading_content {
-    margin-top: 19em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
   .body__about>main>section .about__heading_content>h1 {
