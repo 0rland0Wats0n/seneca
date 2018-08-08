@@ -839,8 +839,42 @@ form input[type="radio"]:checked + label {
   }
 
   .body__home > main > section .home__pillar .home__pillar_image {
-    padding-top: 54.7851563%;
+    padding-top: 0;
     height: 100%;
+    position: relative;
+  }
+
+  .body__home > main > section .home__pillar .home__pillar_image::before {
+    content: "";
+    width: 0;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: width 200ms linear;
+            transition: width 200ms linear;
+  }
+
+  .body__home > main > section .home__pillar:first-child .home__pillar_image::before {
+    background-color: #eca921;
+  }
+
+  .body__home > main > section .home__pillar:nth-child(2) .home__pillar_image::before {
+    background-color: #be202e;
+  }
+
+  .body__home > main > section .home__pillar:nth-child(3) .home__pillar_image::before {
+    background-color: #067a3f;
+  }
+
+  .body__home > main > section .home__pillar:last-child .home__pillar_image::before {
+    background-color: #025ea7;
+  }
+  
+  .body__home > main > section .home__pillar .home__pillar_image:hover::before {
+    -webkit-transition: width 1s linear;
+            transition: width 1s linear;
+    width: 100%;
   }
 }
 
