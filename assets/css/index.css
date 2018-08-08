@@ -821,6 +821,9 @@ form input[type="radio"]:checked + label {
 
   .body__home > main > section .home__pillar .home__pillar_content {
     padding: 82px 3em 4em;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
 }
 

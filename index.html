@@ -139,7 +139,8 @@
 
       document.querySelectorAll(".pillar__close").forEach(function(closeButton) {
         closeButton.addEventListener("click", function(e) {
-          e.currentTarget.parentElement.classList.replace("active", "inactive");
+          e.currentTarget.parentElement.classList.remove("active");
+          e.currentTarget.parentElement.classList.add("inactive");
         });
       });
 
@@ -154,7 +155,8 @@
 
           hoverTime = setTimeout(function() {
             if (parent.classList.contains("inactive")) {
-              parent.classList.replace("inactive", "active");
+              parent.classList.remove("inactive");
+              parent.classList.add("active");
             } else {
               parent.classList.add("active");
             }
@@ -167,14 +169,15 @@
 
         pillarImage.addEventListener("click", function(e) {
           clearTimeout(hoverTime);
-          
+
           var parent = e.currentTarget.parentElement;
 
           if (parent.classList.contains("active"))
             return;
           
           if (parent.classList.contains("inactive")) {
-            parent.classList.replace("inactive", "active");
+            parent.classList.remove("inactive");
+            parent.classList.add("active");
           } else {
             parent.classList.add("active");
           }
