@@ -32,7 +32,6 @@ html {
 
 body {
   width: 100%;
-  min-height: 100%;
   background-color: white;
   font-family: Helvetica, san-serif;
   font-size: 16px;
@@ -1811,17 +1810,16 @@ form input[type="radio"]:checked + label {
   }
 
   .body__about > main {
-    height: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-      -webkit-box-pack: start;
-          -ms-flex-pack: start;
-              justify-content: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 
   .body__about > main > section:first-of-type {
@@ -1888,7 +1886,8 @@ form input[type="radio"]:checked + label {
   ================
 */
 
-.body__pre_donate {
+.body__pre_donate > main {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1896,15 +1895,12 @@ form input[type="radio"]:checked + label {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
       flex-flow: row wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
 }
 
-.body__pre_donate > main {
+.body__pre_donate > main > main {
   padding: 67px 0 48px;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 500px;
@@ -1912,45 +1908,45 @@ form input[type="radio"]:checked + label {
   color: white;
 }
 
-.body__pre_donate > main .pre_donate__container {
+.body__pre_donate > main > main .pre_donate__container {
   max-width: 768px;
   margin: 0 auto;
 }
 
-.body__pre_donate > main > header {
+.body__pre_donate > main > main > header {
   background-color: #eda91f;
   color: white;
   padding: 48px 2em 0;
 }
 
-.body__pre_donate > main > header a:first-of-type {
+.body__pre_donate > main > main > header a:first-of-type {
   display: block;
   margin: 0 0 48px;
 }
 
-.body__pre_donate > main .pre_donate__content > header  p:not([class="type__caption"]) {
+.body__pre_donate > main > main .pre_donate__content > header  p:not([class="type__caption"]) {
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 16px;
   margin: 20px 0;
 }
 
-.body__pre_donate > main > header  p:nth-of-type(2) {
+.body__pre_donate > main > main > header  p:nth-of-type(2) {
   line-height: 1.78;
   letter-spacing: 1.5px;
   font-weight: 300;
 }
 
-.body__pre_donate > main .button {
+.body__pre_donate > main > main .button {
   margin-bottom: 32px;
   color: #898787;
 }
 
-.body__pre_donate > main > section {
+.body__pre_donate > main > main > section {
   color: #908e8e;
   padding: 2em;
 }
 
-.body__pre_donate > footer {
+.body__pre_donate > main > footer {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 500px;
           flex: 1 1 500px;
@@ -1964,19 +1960,10 @@ form input[type="radio"]:checked + label {
 }
 
 @media (min-width: 1065px) {
-  .body__pre_donate {
-    overflow: hidden;
-  }
-
-  .body__pre_donate > main {
-    overflow-y: auto;
-  }
-
-  .body__pre_donate > footer {
+  .body__pre_donate > main > footer {
     -webkit-box-flex: 0;
         -ms-flex-positive: 0;
             flex-grow: 0;
-    height: 100%;
     background-position-y: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2172,8 +2159,8 @@ form input[type="radio"]:checked + label {
 }
 
 .body__careers > main > section:first-of-type > .careers__section_container .p__group {
-  font-size: 12px;
-  line-height: 1.83;
+  font-size: 14px;
+  line-height: 1.79;
   -webkit-column-gap: 28px;
           column-gap: 28px;
 }
@@ -2555,6 +2542,9 @@ form input[type="radio"]:checked + label {
 
 .body__adopt {
   background-color: rgba(191, 32, 47, 0.92);
+}
+
+.body__adopt > main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2565,32 +2555,29 @@ form input[type="radio"]:checked + label {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-}
-
-.body__adopt > main {
+        }
+        
+.body__adopt > main .adopt__content {
+  max-width: 768px;
+  padding: 106px 2em 48px;
+  margin: 0 auto;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   color: white;
 }
 
-.body__adopt > main .adopt__content {
-  max-width: 768px;
-  padding: 106px 2em 48px;
-  margin: 0 auto;
-}
-
-.body__adopt > main .adopt__content > header {
+.body__adopt > main .adopt__content  header {
   margin-bottom: 48px;
 }
 
-.body__adopt > main .adopt__content > header > p {
+.body__adopt > main .adopt__content  header > p {
   font: 300 18px "Roboto", Helvetica, san-serif;
   line-height: 1.67;
   letter-spacing: 2.5px;
 }
 
-.body__adopt > main .adopt__content > p {
+.body__adopt > main .adopt__content .wrapper > p {
   font-size: 14px;
   line-height: 1.57;
   letter-spacing: 2.3px;
@@ -2607,16 +2594,16 @@ form input[type="radio"]:checked + label {
   
 }
 
-.body__adopt > main .adopt__content > div {
+.body__adopt > main .adopt__content > div > div {
   text-align: right;
   color: #898787;
 }
 
-.body__adopt > main .adopt__content > div .button {
+.body__adopt > main .adopt__content  div .button {
   margin: 1em 0;
 }
 
-.body__adopt > footer {
+.body__adopt > main > footer {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 500px;
           flex: 1 1 500px;
@@ -2629,19 +2616,27 @@ form input[type="radio"]:checked + label {
   background-repeat: no-repeat;
 }
 
-@media (min-width: 1065px) {
-  .body__adopt {
-    overflow: hidden;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
 
+@media (min-width: 992px) {
   .body__adopt > main {
-    overflow-y: auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
-  .body__adopt > main .adopt__content > p {
+  .body__adopt > main .adopt__content {
+    max-width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+
+  .body__adopt > main .adopt__content .wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .body__adopt > main .adopt__content .wrapper > p {
     padding-left: 31px;
   }
 
@@ -2661,11 +2656,12 @@ form input[type="radio"]:checked + label {
     border-radius: 5px;
   }
 
-  .body__adopt > footer {
+  .body__adopt > main > footer {
+    max-width: 412px;
     -webkit-box-flex: 0;
-        -ms-flex-positive: 0;
-            flex-grow: 0;
-    height: 100%;
+        -ms-flex: 0 1 412px;
+            flex: 0 1 412px;
+    height: auto;
     background-position-y: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2677,18 +2673,14 @@ form input[type="radio"]:checked + label {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
   }
 }
 
-@media (min-width: 1190px) {
-  .body__adopt>main .adopt__content>div .button:first-child {
-    margin-right: 28px;
-  }
-}
-
-@media (min-width: 1919px) {
-  .body__adopt>main .adopt__content {
-    padding-right: 200px;
+@media (min-width: 1440px) {
+  .body__adopt > main {
+    overflow: hidden;
   }
 }
 
