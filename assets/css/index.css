@@ -1067,7 +1067,7 @@ form input[type="radio"]:checked + label {
 @media (min-width: 992px) {
   .body__home.alternate {
     height: 100%;
-    overflow-y: hidden;
+    overflow: hidden;
   }
 
   .body__home.alternate > main > header {
@@ -1138,13 +1138,17 @@ form input[type="radio"]:checked + label {
   .body__home.alternate > main > header .pillars__switcher > li[data-pillar="permanence"]::before {
     background-color: #025ea7;
   }
-
+  
   .body__home.alternate > main > header .pillars__switcher > li[data-pillar="education"]::before {
     background-color: #be202e;
+    right: 0;
+    left: auto;
   }
 
   .body__home.alternate > main > header .pillars__switcher > li[data-pillar="mental health"]::before {
     background-color: #067a3f;
+    right: 0;
+    left: auto;
   }
 
   .body__home.alternate > main > header .pillars__switcher > li:not([class="divider"]):hover::before {
@@ -1172,10 +1176,27 @@ form input[type="radio"]:checked + label {
     z-index: 99;
   }
 
+  .body__home.alternate > main > section .home__pillar[data-pillar="mental health"],
+  .body__home.alternate > main > section .home__pillar[data-pillar="education"] {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    left: auto;
+    right: 0;
+  }
+
   .body__home.alternate > main > section .home__pillar.loading {
-    transiiton: transform 1s ease-in;
+    -webkit-transition: -webkit-transform 1s ease-in;
+    transition: -webkit-transform 1s ease-in;
+    transition: transform 1s ease-in;
+    transition: transform 1s ease-in, -webkit-transform 1s ease-in;
     -webkit-transform: translateX(-90%);
             transform: translateX(-90%);
+  }
+
+  .body__home.alternate > main > section .home__pillar.loading[data-pillar="mental health"],
+  .body__home.alternate > main > section .home__pillar.loading[data-pillar="education"] {
+    -webkit-transform: translateX(90%);
+            transform: translateX(90%);
   }
 
   .body__home.alternate > main > section .home__pillar.active {
