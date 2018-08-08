@@ -164,6 +164,21 @@
         pillarImage.addEventListener("mouseleave", function(e) {
           clearTimeout(hoverTime);
         });
+
+        pillarImage.addEventListener("click", function(e) {
+          clearTimeout(hoverTime);
+          
+          var parent = e.currentTarget.parentElement;
+
+          if (parent.classList.contains("active"))
+            return;
+          
+          if (parent.classList.contains("inactive")) {
+            parent.classList.replace("inactive", "active");
+          } else {
+            parent.classList.add("active");
+          }
+        });
       })
     </script>
   </body>
