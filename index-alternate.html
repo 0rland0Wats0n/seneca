@@ -72,6 +72,9 @@
           </span>
           <a href="#" class="button button__squarer button__bold">innovation</a>
         </div>
+        <span class="pillar__close">
+          <i class="fas fa-times"></i>
+        </span>
       </div>
       <div class="home__pillar bg__red" data-pillar="education">
         <div class="home__pillar_content bg__red">
@@ -88,6 +91,9 @@
           </span>
           <a href="#" class="button button__squarer button__bold">education</a>
         </div>
+        <span class="pillar__close">
+          <i class="fas fa-times"></i>
+        </span>
       </div>
       <div class="home__pillar bg__green" data-pillar="mental health">
         <div class="home__pillar_content bg__green">
@@ -104,6 +110,9 @@
           </span>
           <a href="#" class="button button__squarer button__bold">mental health</a>
         </div>
+        <span class="pillar__close">
+          <i class="fas fa-times"></i>
+        </span>
       </div>
       <div class="home__pillar bg__blue" data-pillar="permanence">
         <div class="home__pillar_content bg__blue">
@@ -120,6 +129,9 @@
           </span>
           <a href="#" class="button button__squarer button__bold">permanence</a>
         </div>
+        <span class="pillar__close">
+          <i class="fas fa-times"></i>
+        </span>
       </div>
     </section>
   </main>
@@ -161,7 +173,6 @@
     document.querySelectorAll(".pillar__close").forEach(function (closeButton) {
       closeButton.addEventListener("click", function (e) {
         e.currentTarget.parentElement.classList.remove("active");
-        e.currentTarget.parentElement.classList.add("inactive");
       });
     });
 

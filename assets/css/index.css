@@ -1079,14 +1079,12 @@ form input[type="radio"]:checked + label {
 
   .body__home.alternate > main > header .logo {
     width: 200px;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 25%;
-            flex: 0 1 25%;
     z-index: 100;
   }
 
   .body__home.alternate > main > header >h3 {
     font-size: 42px;
+    margin-top: 25%;
   }
 
   .body__home.alternate > main > header .pillars__switcher {
@@ -1223,6 +1221,12 @@ form input[type="radio"]:checked + label {
   .body__home.alternate > main > section .home__pillar.active {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+
+  .body__home.alternate > main > section .home__pillar.active[data-pillar="permanence"] .pillar__close,
+  .body__home.alternate > main > section .home__pillar.active[data-pillar="innovation"] .pillar__close {
+    right: auto;
+    left: 20px;
   }
 }
 
