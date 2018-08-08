@@ -1082,6 +1082,7 @@ form input[type="radio"]:checked + label {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 25%;
             flex: 0 1 25%;
+    z-index: 100;
   }
 
   .body__home.alternate > main > header >h3 {
@@ -1161,9 +1162,25 @@ form input[type="radio"]:checked + label {
     position: absolute;
     left: 0;
     top: 0;
-    width: 80%;
+    width: 61.0416667%;
+    -webkit-transition: -webkit-transform 400ms ease-in;
+    transition: -webkit-transform 400ms ease-in;
+    transition: transform 400ms ease-in;
+    transition: transform 400ms ease-in, -webkit-transform 400ms ease-in;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
+    z-index: 99;
+  }
+
+  .body__home.alternate > main > section .home__pillar.loading {
+    transiiton: transform 1s ease-in;
+    -webkit-transform: translateX(-90%);
+            transform: translateX(-90%);
+  }
+
+  .body__home.alternate > main > section .home__pillar.active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
