@@ -1084,7 +1084,7 @@ form input[type="radio"]:checked + label {
 
   .body__home.alternate > main > header >h3 {
     font-size: 42px;
-    margin-top: 25%;
+    margin-top: 20%;
   }
 
   .body__home.alternate > main > header .pillars__switcher {
