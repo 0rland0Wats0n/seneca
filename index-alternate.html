@@ -191,7 +191,16 @@
         content.classList.remove("loading");
         content.classList.add("active");
       });
-    })
+    });
+
+    document.querySelectorAll(".home__pillar").forEach(function(pillar) {
+      pillar.addEventListener("mouseleave", function(e) {
+        if (window.innerWidth < 992)
+          return;
+
+        e.srcElement.classList.remove("active");
+      });
+    });
   </script>
 </body>
 

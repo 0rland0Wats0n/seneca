@@ -1167,6 +1167,7 @@ form input[type="radio"]:checked + label {
     left: 0;
     top: 0;
     width: 61.0416667%;
+    height: 100%;
     -webkit-transition: -webkit-transform 400ms ease-in;
     transition: -webkit-transform 400ms ease-in;
     transition: transform 400ms ease-in;
@@ -1174,6 +1175,26 @@ form input[type="radio"]:checked + label {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
     z-index: 99;
+  }
+
+  .body__home.alternate > main > section .home__pillar .home__pillar_content {
+    max-width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .body__home.alternate > main > section .home__pillar[data-pillar="mental health"],
