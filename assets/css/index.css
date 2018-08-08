@@ -1,6 +1,7 @@
 /* 
   TABLE OF CONTENTS
-  1.  Normalization
+  0.  Normalization
+  1.  @font-face
   2.  General
   3.  Typegraphy
   4.  Navigation
@@ -9,12 +10,98 @@
   7.  Calendar
 */
 
+
+
+
 /* 
-  1.  Normalization
+  0.  Normalization
   ===================
 */
 
 @import "normalize.css";
+
+
+/* 
+  1.  @font-face
+  ===================
+*/
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Reg.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: italic;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Reg\ It.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Bold.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: bold;
+  font-style: italic;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Bold\ It.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 100;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Thin.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 100;
+  font-style: italic;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Thin\ It.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 300;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Light.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 300;
+  font-style: italic;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Light\ It.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Xbold.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  font-style: italic;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Xbold\ It.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 900;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Black.otf);
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 900;
+  font-style: italic;
+  src: url(/assets/fonts/Proxima\ Nova/Proxima\ Nova\ Black\ It.otf);
+}
+
 
 /* 
   2.  General
@@ -33,7 +120,7 @@ html {
 body {
   width: 100%;
   background-color: white;
-  font-family: Helvetica, san-serif;
+  font-family: "Proxima Nova", Helvetica, san-serif;
   font-size: 16px;
   letter-spacing: normal;
   line-height: 1.67;
@@ -153,20 +240,20 @@ body footer > nav:first-of-type > a {
 */
 
 h1, h2 {
-  font-family: "Roboto", Helvetica, sans-serif;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-size: 7vw;
   color: inherit;
 }
 
 h3 {
-  font-family: "Roboto", Helvetica, sans-serif;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-size: 48px;
   letter-spacing: 0;
   color: inherit;
 }
 
 h4 {
-  font-family: "Roboto", Helvetica, sans-serif;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-size: 34px;
   line-height: 1.39;
   letter-spacing: 0.015625rem;
@@ -174,7 +261,7 @@ h4 {
 }
 
 h5 {
-  font-family: "Roboto", Helvetica, sans-serif;
+  font-family: "Proxima Nova", Helvetica, sans-serif;
   font-size: 24px;
   letter-spacing: 1.67;
   color: inherit;
@@ -789,7 +876,6 @@ form input[type="radio"]:checked + label {
   color: white;
   font-size: 14px;
   letter-spacing: 1.5px;
-  font-family: "Roboto", Helvetica, sans-serif;
   font-weight: 300;
   margin-bottom: 82px;
 }
@@ -1823,6 +1909,7 @@ form input[type="radio"]:checked + label {
 
   .body__about > main > section:first-of-type {
     max-width: 100%;
+    min-height: 100vh;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
@@ -1924,7 +2011,6 @@ form input[type="radio"]:checked + label {
 }
 
 .body__pre_donate > main > main .pre_donate__content > header  p:not([class="type__caption"]) {
-  font-family: "Roboto", Helvetica, sans-serif;
   font-size: 16px;
   margin: 20px 0;
 }
@@ -2269,7 +2355,7 @@ form input[type="radio"]:checked + label {
 }
 
 .body__research > main > section:last-of-type > ul {
-  font: 400 14px "Roboto", Helvetica, san-serif;
+  font: 400 14px "Proxima Nova", Helvetica, san-serif;
   letter-spacing: 2.3;
   text-transform: uppercase;
   text-align: center;
@@ -2571,7 +2657,7 @@ form input[type="radio"]:checked + label {
 }
 
 .body__adopt > main .adopt__content  header > p {
-  font: 300 18px "Roboto", Helvetica, san-serif;
+  font: 300 18px "Proxima Nova", Helvetica, san-serif;
   line-height: 1.67;
   letter-spacing: 2.5px;
 }
@@ -2921,4 +3007,4 @@ form input[type="radio"]:checked + label {
   .body__events > main > section .events__upcoming .event__upcoming .event__upcoming_details {
     padding-right: 0;
   } 
-} 
+}
