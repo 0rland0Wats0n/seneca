@@ -1006,6 +1006,167 @@ form input[type="radio"]:checked + label {
   }
 }
 
+
+/* 
+  Home - Alternate
+  ===================
+*/
+
+.body__home.alternate > main > header {
+  background-image: url(../images/background_image@2x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  padding: 2em;
+}
+
+.body__home.alternate > main > header .logo {
+  padding: 0;
+  margin: 0 auto 4em;;
+}
+
+.body__home.alternate > main > header > h3 {
+  font-size: 5vw;
+}
+
+.body__home.alternate > main > header .pillars__switcher {
+  display: none;
+}
+
+.body__home.alternate > main > header > a {
+  display: block;
+  padding: 2em;
+  color: white;
+}
+
+.body__home.alternate > main > header > a > img {
+  max-width: 34px;
+}
+
+@media (min-width: 767px) {
+  .body__home.alternate > main > section .home__pillar .home__pillar_content .p__group {
+    max-width: 600px;
+    margin: 0 auto 82px;
+  }
+}
+
+@media (min-width: 992px) {
+  .body__home.alternate {
+    height: 100%;
+    overflow-y: hidden;
+  }
+
+  .body__home.alternate > main > header {
+    padding-bottom: 67px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .body__home.alternate > main > header .logo {
+    width: 200px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
+  }
+
+  .body__home.alternate > main > header >h3 {
+    font-size: 42px;
+  }
+
+  .body__home.alternate > main > header .pillars__switcher {
+    width: 1140px;
+    max-width: 100%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .body__home.alternate > main > header .pillars__switcher > li {
+    color: rgba(255,255,255,.63);
+    font-size: 20px;
+    display: block;
+    text-transform: uppercase;
+    font-family: "Roboto", Helvetica, sans-serif;
+    letter-spacing: 2.1px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .body__home.alternate > main > header .pillars__switcher > li.divider {
+    width: 1px;
+    height: 108px;
+    background-color: #979797;
+    cursor: auto;
+  }
+
+  .body__home.alternate > main > header .pillars__switcher > li:not([class="divider"])::before {
+    content: "";
+    width: 0;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: width 200ms ease-in;
+    transition: width 200ms ease-in;
+  }
+
+  .body__home.alternate > main > header .pillars__switcher > li[data-pillar="innovation"]::before {
+    background-color: #eca921;
+  }
+
+  .body__home.alternate > main > header .pillars__switcher > li[data-pillar="permanence"]::before {
+    background-color: #025ea7;
+  }
+
+  .body__home.alternate > main > header .pillars__switcher > li[data-pillar="education"]::before {
+    background-color: #be202e;
+  }
+
+  .body__home.alternate > main > header .pillars__switcher > li[data-pillar="mental health"]::before {
+    background-color: #067a3f;
+  }
+
+  .body__home.alternate > main > header .pillars__switcher > li:not([class="divider"]):hover::before {
+    -webkit-transition: width 1s ease-in;
+    transition: width 1s ease-in;
+    width: 100%;
+  }
+
+  .body__home.alternate > main > section {
+    position: static;
+    display: block;
+  }
+
+  .body__home.alternate > main > section .home__pillar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80%;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
 /* 
   Sign Up
   =================
