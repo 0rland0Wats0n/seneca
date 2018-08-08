@@ -840,6 +840,11 @@ form input[type="radio"]:checked + label {
 
 .body__home > main > section .home__pillar {
   width: 100%;
+  -webkit-transition: transform 600ms ease-in;
+    -webkit-transition: -webkit-transform 600ms ease-in;
+    transition: -webkit-transform 600ms ease-in;
+    transition: transform 600ms ease-in;
+    transition: transform 600ms ease-in, -webkit-transform 600ms ease-in;
 }
 
 .body__home > main > section .home__pillar .home__pillar_image {
@@ -922,6 +927,7 @@ form input[type="radio"]:checked + label {
 
   .body__home > main {
     height: 100vh;
+    overflow: hidden;
   }
 
   .body__home>main .logo {
@@ -957,6 +963,14 @@ form input[type="radio"]:checked + label {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+
+  .body__home > main > section .home__pillar {
+    -webkit-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
 
   .body__home > main > section .home__pillar .home__pillar_content {
@@ -998,11 +1012,18 @@ form input[type="radio"]:checked + label {
   .body__home > main > section .home__pillar:last-child .home__pillar_image::before {
     background-color: #025ea7;
   }
-  
+
+
   .body__home > main > section .home__pillar:not([class~="active"]) .home__pillar_image:hover::before {
-    -webkit-transition: width 1s linear;
-            transition: width 1s linear;
+    -webkit-transition: width 500ms linear;
+            transition: width 500ms linear;
     width: 100%;
+  }
+
+  .body__home > main > section .home__pillar:not([class~="active"]):hover {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+            flex: 0 0 30%;
   }
 
   .body__home > main > section .home__pillar.active {
@@ -1973,7 +1994,7 @@ form input[type="radio"]:checked + label {
 */
 
 .body__pre_donate > main {
-  height: 100%;
+  min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
