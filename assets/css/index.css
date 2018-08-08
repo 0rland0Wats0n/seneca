@@ -1342,10 +1342,6 @@ form input[type="radio"]:checked + label {
   color: white;
 }
 
-.body__about > main > section:first-of-type > header {
-  text-align: center;
-}
-
 .body__about > main > section .about__heading_content {
   margin: 8em auto 3em;
 }
@@ -1411,7 +1407,7 @@ form input[type="radio"]:checked + label {
   }
 }
 
-@-webkit-keyframes overflow {
+@-webkit-keyframes overflowAnim {
   to { overflow: visible; }
 }
 
@@ -1492,6 +1488,7 @@ form input[type="radio"]:checked + label {
 }
 
 @media (min-width: 1440px) {
+  .body__about > main > section > header,
   .body__about > main > section .about__heading_content {
     padding-left: 7em;
   }
