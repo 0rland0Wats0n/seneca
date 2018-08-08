@@ -1889,55 +1889,65 @@ form input[type="radio"]:checked + label {
 */
 
 .body__pre_donate {
-  background-color: #eda91f;
-  color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      flex-flow: row wrap;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .body__pre_donate > main {
-  padding: 106px 2em 48px;
+  padding: 67px 0 48px;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 500px;
-          flex: 1 1 500px;
+  -ms-flex: 1 1 500px;
+  flex: 1 1 500px;
   color: white;
 }
 
-.body__pre_donate > main .pre_donate__content {
+.body__pre_donate > main .pre_donate__container {
   max-width: 768px;
   margin: 0 auto;
 }
 
-.body__pre_donate > main .pre_donate__content > header {
-  margin-bottom: 48px;
+.body__pre_donate > main > header {
+  background-color: #eda91f;
+  color: white;
+  padding: 48px 2em 0;
 }
 
-.body__pre_donate > main .pre_donate__content > p:not([class="type__caption"]) {
+.body__pre_donate > main > header a:first-of-type {
+  display: block;
+  margin: 0 0 48px;
+}
+
+.body__pre_donate > main .pre_donate__content > header  p:not([class="type__caption"]) {
   font-family: "Roboto", Helvetica, sans-serif;
   font-size: 16px;
   margin: 20px 0;
 }
 
-.body__pre_donate > main .pre_donate__content > p:nth-of-type(2) {
+.body__pre_donate > main > header  p:nth-of-type(2) {
   line-height: 1.78;
   letter-spacing: 1.5px;
   font-weight: 300;
 }
 
-.body__pre_donate > main .pre_donate__content .button {
+.body__pre_donate > main .button {
   margin-bottom: 32px;
   color: #898787;
+}
+
+.body__pre_donate > main > section {
+  color: #908e8e;
+  padding: 2em;
 }
 
 .body__pre_donate > footer {
