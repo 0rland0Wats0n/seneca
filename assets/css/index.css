@@ -2618,6 +2618,7 @@ form input[type="radio"]:checked + label {
 
 @media (min-width: 992px) {
   .body__adopt > main {
+    min-height: 100vh;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -2625,9 +2626,9 @@ form input[type="radio"]:checked + label {
 
   .body__adopt > main .adopt__content {
     max-width: 100%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
   }
 
   .body__adopt > main .adopt__content .wrapper {
@@ -2657,9 +2658,10 @@ form input[type="radio"]:checked + label {
 
   .body__adopt > main > footer {
     max-width: 412px;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 412px;
-            flex: 0 1 412px;
+    height: 100vh;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 412px;
+            flex: 1 1 412px;
     height: auto;
     background-position-y: 0;
     display: -webkit-box;
@@ -2814,7 +2816,7 @@ form input[type="radio"]:checked + label {
 
 @media (min-width: 992px) {
   .body__events > main {
-    height: 100%;
+    min-height: 100vh;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
