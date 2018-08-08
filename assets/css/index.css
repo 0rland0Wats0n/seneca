@@ -2124,23 +2124,41 @@ form input[type="radio"]:checked + label {
 */
 
 .body__careers > header {
-  padding: 120px 2em 60px;
+  padding: 120px 2em 0;
+  background-color: #eda91f;
+}
+
+.body__careers > header > span,
+.body__careers > header > section {
+  display: block;
   max-width: 1140px;
   margin: 0 auto;
 }
 
-.body__careers > header > nav {
-  font-family: "Roboto", Helvetica, sans-serif;
-  color: #a7a7a7;
-  margin-top: 65px;
-  line-height: 1.78;
-  letter-spacing: 1.2;
-  font-size: 18px;
-  font-weight: 300;
+.body__careers > header > section {
+  color: white;
+  padding: 56px 0;
 }
 
-.body__careers > header > nav > a {
+.body__careers>header>section > .careers__section_container>h4 {
+  margin-top: 0;
+  font-family: Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: 18px;
+  line-height: 0.83;
+}
+
+.body__careers > header > section > .careers__section_container .p__group {
+  font-size: 12px;
+  line-height: 1.83;
+  -webkit-column-gap: 28px;
+          column-gap: 28px;
+}
+
+.body__careers > header > section  a.button {
+  color: #898787;
   display: block;
+  margin: 48px auto;
 }
 
 .body__careers > main > section .careers__section_container {
@@ -2149,36 +2167,11 @@ form input[type="radio"]:checked + label {
 }
 
 .body__careers > main > section:first-of-type {
-  background-color: #eda91f;
-  color: white;
-  padding: 56px 2em;
-}
-
-.body__careers>main>section:first-of-type > .careers__section_container>h4 {
-  margin-top: 0;
-  font-family: Helvetica, sans-serif;
-  font-weight: 500;
-  letter-spacing: 18px;
-  line-height: 0.83;
-}
-
-.body__careers > main > section:first-of-type > .careers__section_container .p__group {
-  font-size: 12px;
-  line-height: 1.83;
-  -webkit-column-gap: 28px;
-          column-gap: 28px;
-}
-
-.body__careers > main > section:first-of-type  a.button {
-  color: #898787;
-}
-
-.body__careers > main > section:nth-of-type(2) {
   padding: 56px 2em;
   color: #a7a7a7;
 }
 
-.body__careers > main > section:nth-of-type(2) > .careers__section_container .p__group {
+.body__careers > main > section:first-of-type > .careers__section_container .p__group {
   font-size: 12px;
   line-height: 1.83;
   -webkit-column-gap: 28px;
@@ -2191,14 +2184,14 @@ form input[type="radio"]:checked + label {
   margin-bottom: 60px;
 }
 
-.body__careers > main > section:nth-of-type(3) {
+.body__careers > main > section:nth-of-type(2) {
   background-color: #eda91f;
   color: white;
   padding: 18px 2em;
   text-align: center;
 }
 
-.body__careers > main > section:nth-of-type(3) > h4 {
+.body__careers > main > section:nth-of-type(2) > h4 {
   margin: 0;
   font-family: Helvetica, sans-serif;
   font-weight: 500;
@@ -2233,7 +2226,7 @@ form input[type="radio"]:checked + label {
 
 @media (min-width: 768px) {
   .body__careers > main > section:first-of-type > .careers__section_container .p__group,
-  .body__careers > main > section:nth-of-type(2) > .careers__section_container .p__group {
+  .body__careers > header > section > .careers__section_container .p__group {
     -webkit-columns: 2;
             columns: 2;
   }
@@ -2242,7 +2235,7 @@ form input[type="radio"]:checked + label {
 }
 
 @media (min-width: 1140px) {
-  .body__careers > main > section:first-of-type > .careers__section_container .p__group {
+  .body__careers > header > section > .careers__section_container .p__group {
     -webkit-columns: 4;
             columns: 4;
   }
