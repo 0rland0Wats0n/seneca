@@ -153,7 +153,7 @@
         pillarImage.addEventListener("mouseover", function(e) {
           var parent = e.currentTarget.parentElement;
 
-          if (parent.classList.contains("active"))
+          if (parent.classList.contains("active") || window.innerWidth < 992)
             return;
 
           hoverTime = setTimeout(function() {
