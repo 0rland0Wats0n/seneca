@@ -795,6 +795,7 @@ form input[type="radio"]:checked + label {
 */
 
 .body__home > nav {
+  display: none;
   -webkit-transform: translateY(67px);
           transform: translateY(67px);
 }
@@ -833,8 +834,17 @@ form input[type="radio"]:checked + label {
   text-align: center;
 }
 
-.body__home > main .home__cta > h5 {
+.body__home > main .home__cta > a {
+  display: none;
+}
+
+.body__home > main .home__cta > a > i > img {
+  width: 27px;
+}
+
+.body__home > main .home__cta > h4 {
   font-size: 3.5vw;
+  letter-spacing: 25.5px;
   word-break: break-word;
 }
 
@@ -919,6 +929,22 @@ form input[type="radio"]:checked + label {
   }
 }
 
+@-webkit-keyframes removeAfter {
+  50% { opacity: 0; }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@keyframes removeAfter {
+  50% { opacity: 0; }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
 @media (min-width: 992px) {
   .body__home > nav {
     -webkit-transform: translateY(0);
@@ -927,24 +953,27 @@ form input[type="radio"]:checked + label {
 
   .body__home > main {
     height: 100vh;
-    overflow: hidden;
   }
 
   .body__home>main .logo {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
   
   .body__home > main .home__cta {
     position: absolute;
     width: 100%;
-    bottom: 67px;
+    bottom: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
   }
 
-  .body__home > main .home__cta > h5 {
-    font-size: 24px;
+  .body__home > main .home__cta > a {
+    display: block;
+  }
+
+  .body__home > main .home__cta > h4 {
+    font-size: 36px;
   }
 
   .body__home > main > section {
@@ -965,7 +994,12 @@ form input[type="radio"]:checked + label {
             justify-content: flex-start;
   }
 
+  .body__home > main > section.home__content {
+    top: 100%;
+  }
+
   .body__home > main > section .home__pillar {
+    position: relative;
     -webkit-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
     -webkit-box-flex: 1;
@@ -997,6 +1031,16 @@ form input[type="radio"]:checked + label {
             transition: width 200ms linear;
   }
 
+  .body__home > main > section .home__pillar:not([class~="active"])::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+
   .body__home > main > section .home__pillar:first-child .home__pillar_image::before {
     background-color: #eca921;
   }
@@ -1024,6 +1068,11 @@ form input[type="radio"]:checked + label {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 30%;
             flex: 0 0 30%;
+  }
+
+  .body__home > main > section .home__pillar:not([class~="active"]):hover::after {
+    -webkit-animation: removeAfter 450ms linear 200ms forwards;
+            animation: removeAfter 450ms linear 200ms forwards
   }
 
   .body__home > main > section .home__pillar.active {
