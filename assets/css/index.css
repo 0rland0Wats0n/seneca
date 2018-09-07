@@ -920,6 +920,49 @@ form input[type="radio"]:checked + label {
   display: none;
 }
 
+.body__home > main .home__content {
+  padding: 35px 0;
+  background-color: white;
+}
+
+.body__home > main .home__content .home__content_item {
+  padding: 35px 0;
+  margin: 0 auto;
+  width: 1440px;
+  max-width: 100%;
+  text-align: center;
+  color: #292929;
+}
+
+.body__home > main .home__content .home__content_item > img {
+  max-width: 100%;;
+}
+
+.body__home > main .home__content .home__content_item .content_item__content {
+  padding: 2em;
+}
+
+.body__home > main .home__content .home__content_item .content_item__content > h4 {
+  margin-top: 0;
+  letter-spacing: 21.2px;
+}
+
+.body__home > main .home__content .home__content_item .content_item__content > p {
+  line-height: 1.21;
+  letter-spacing: 2px;
+  font-size: 14px;
+  max-width: 500px;
+  display: inline-block;
+  margin-bottom: 3.28571429em;
+}
+
+.body__home > main .home__content .home__content_item .content_item__content > a.button {
+  border: 2px solid #292929;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 @media (min-width: 768px) {
   .body__home>main>section .home__pillar {
     display: -webkit-box;
