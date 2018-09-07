@@ -110,7 +110,7 @@
         </div>
       </section>
       <section id="content" class="home__content">
-        <div class="home__content_item">
+        <div class="home__content_item" data-in-view="false">
           <span>
             <img src="/assets/images/seneca_over_color_04.jpg" alt="" />
           </span>
@@ -120,7 +120,7 @@
             <a href="/pages/adopt.html" class="button">learn more</a>
           </div>
         </div>
-        <div class="home__content_item reverse">
+        <div class="home__content_item reverse" data-in-view="false">
           <span>
             <img src="/assets/images/seneca_over_color_05.jpg" alt="" />
           </span>
@@ -130,7 +130,7 @@
             <a href="/pages/adopt.html" class="button">learn more</a>
           </div>
         </div>
-        <div class="home__content_item">
+        <div class="home__content_item" data-in-view="false">
           <span>
             <img src="/assets/images/seneca_over_color_06.jpg" alt="" />
           </span>
@@ -166,6 +166,15 @@
               }
           };
       }
+
+      function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        
+        return rect.bottom > 0 &&
+          rect.right > 0 &&
+          rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+          rect.top*1.25 < (window.innerHeight || document.documentElement.clientHeight);
+      }
     </script>
     <script>
       window.addEventListener("scroll", function() {
@@ -179,6 +188,11 @@
         if (window.pageYOffset === 0 && homeBody.classList.contains("at_bottom")) {
           homeBody.classList.remove("at_bottom");
         }
+
+        document.querySelectorAll(".home__content_item").forEach(function(el) {
+          if (isElementInViewport(el))
+            el.setAttribute("data-in-view", "true");
+        });
       });
 
       document.querySelectorAll(".pillar__close").forEach(function(closeButton) {
@@ -194,6 +208,11 @@
         if (document.readyState === "complete") {
           document.querySelectorAll(".home__pillar[data-state='unready']").forEach(function(pillar) {
             pillar.setAttribute("data-state", "ready");
+          });
+
+          document.querySelectorAll(".home__content_item").forEach(function (el) {
+            if (isElementInViewport(el))
+              el.setAttribute("data-in-view", "true");
           });
 
           document.querySelectorAll(".smooth_link").forEach(function (link) {
