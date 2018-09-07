@@ -46,7 +46,7 @@
         </a>
       </span>
       <section>
-        <div class="home__pillar">
+        <div class="home__pillar" data-state="unready">
           <div class="home__pillar_image" style="background-image: url(assets/images/pillar__innovation.jpg)"></div>
           <div class="home__pillar_content bg__yellow">
             <h4 class="type__color_white type__uppercase">innovation</h4>
@@ -60,7 +60,7 @@
             <i class="fas fa-times"></i>
           </span>
         </div>
-        <div class="home__pillar">
+        <div class="home__pillar" data-state="unready">
           <div class="home__pillar_image" style="background-image: url(assets/images/pillar__education.jpg)"></div>
           <div class="home__pillar_content bg__red">
             <h4 class="type__color_white type__uppercase">education</h4>
@@ -74,7 +74,7 @@
             <i class="fas fa-times"></i>
           </span>
         </div>
-        <div class="home__pillar">
+        <div class="home__pillar" data-state="unready">
           <div class="home__pillar_image" style="background-image: url(assets/images/pillar__mental_health.jpg)"></div>
           <div class="home__pillar_content bg__green">
             <h4 class="type__color_white type__uppercase">mental health</h4>
@@ -88,7 +88,7 @@
             <i class="fas fa-times"></i>
           </span>
         </div>
-        <div class="home__pillar">
+        <div class="home__pillar" data-state="unready">
           <div class="home__pillar_image" style="background-image: url(assets/images/pillar__permanence.jpg)"></div>
           <div class="home__pillar_content bg__blue">
             <h4 class="type__color_white type__uppercase">permanence</h4>
@@ -148,6 +148,14 @@
       });
 
       var hoverTime;
+
+      document.onreadystatechange = function() {
+        if (document.readyState === "complete") {
+          document.querySelectorAll(".home__pillar[data-state='unready']").forEach(function(pillar) {
+            pillar.setAttribute("data-state", "ready");
+          });
+        }
+      }
 
       document.querySelectorAll(".home__pillar_image").forEach(function(pillarImage) {
         pillarImage.addEventListener("mouseover", function(e) {

@@ -839,7 +839,7 @@ form input[type="radio"]:checked + label {
 }
 
 .body__home > main .home__cta > a > i > img {
-  width: 27px;
+  width: 34px;
 }
 
 .body__home > main .home__cta > h4 {
@@ -850,23 +850,44 @@ form input[type="radio"]:checked + label {
 
 .body__home > main > section .home__pillar {
   width: 100%;
-  -webkit-transition: transform 600ms ease-in;
-    -webkit-transition: -webkit-transform 600ms ease-in;
-    transition: -webkit-transform 600ms ease-in;
-    transition: transform 600ms ease-in;
-    transition: transform 600ms ease-in, -webkit-transform 600ms ease-in;
+  -webkit-transition: -webkit-transform 600ms ease-in, -webkit-box-flex 200ms ease-in;
+  transition: -webkit-transform 600ms ease-in, -webkit-box-flex 200ms ease-in;
+  transition: transform 600ms ease-in, flex 200ms ease-in;
+  transition: transform 600ms ease-in, flex 200ms ease-in, -webkit-transform 600ms ease-in, -webkit-box-flex 200ms ease-in, -ms-flex 200ms ease-in;
 }
 
 .body__home > main > section .home__pillar .home__pillar_image {
   max-width: 100%;
-  margin: 0 auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 0;
   padding-top: 100%;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
+  -webkit-transition: max-width 750ms ease 400ms, -webkit-box-flex 500ms ease;
+  transition: max-width 750ms ease 400ms, -webkit-box-flex 500ms ease;
+  transition: flex 500ms ease, max-width 750ms ease 400ms;
+  transition: flex 500ms ease, max-width 750ms ease 400ms, -webkit-box-flex 500ms ease, -ms-flex 500ms ease;
+}
+
+.body__home > main > section .home__pillar:nth-child(2) .home__pillar_image {
+  -webkit-transition: max-width 750ms ease 500ms, -webkit-box-flex 500ms ease;
+  transition: max-width 750ms ease 500ms, -webkit-box-flex 500ms ease;
+  transition: flex 500ms ease, max-width 750ms ease 500ms;
+  transition: flex 500ms ease, max-width 750ms ease 500ms, -webkit-box-flex 500ms ease, -ms-flex 500ms ease;
+}
+
+.body__home > main > section .home__pillar:nth-child(3) .home__pillar_image {
+  -webkit-transition: max-width 750ms ease 600ms, -webkit-box-flex 500ms ease;
+  transition: max-width 750ms ease 600ms, -webkit-box-flex 500ms ease;
+  transition: flex 500ms ease, max-width 750ms ease 600ms;
+  transition: flex 500ms ease, max-width 750ms ease 600ms, -webkit-box-flex 500ms ease, -ms-flex 500ms ease;
+}
+
+.body__home > main > section .home__pillar:nth-child(4) .home__pillar_image {
+  -webkit-transition: max-width 750ms ease 700ms, -webkit-box-flex 500ms ease;
+  transition: max-width 750ms ease 700ms, -webkit-box-flex 500ms ease;
+  transition: flex 500ms ease, max-width 750ms ease 700ms;
+  transition: flex 500ms ease, max-width 750ms ease 700ms, -webkit-box-flex 500ms ease, -ms-flex 500ms ease;
 }
 
 .body__home > main > section .home__pillar .home__pillar_content {
@@ -1000,8 +1021,6 @@ form input[type="radio"]:checked + label {
 
   .body__home > main > section .home__pillar {
     position: relative;
-    -webkit-transition: all 200ms ease-in;
-    transition: all 200ms ease-in;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -1020,6 +1039,10 @@ form input[type="radio"]:checked + label {
     position: relative;
   }
 
+  .body__home > main > section .home__pillar[data-state="unready"] .home__pillar_image {
+    max-width: 0;
+  }
+
   .body__home > main > section .home__pillar .home__pillar_image::before {
     content: "";
     width: 0;
@@ -1036,6 +1059,8 @@ form input[type="radio"]:checked + label {
     width: 100%;
     height: 100%;
     position: absolute;
+    left: 0;
+    top: 0;
     display: block;
     background-color: rgba(0,0,0,0.5);
     z-index: 1;
