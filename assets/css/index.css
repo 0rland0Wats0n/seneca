@@ -961,6 +961,8 @@ form input[type="radio"]:checked + label {
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -1052,6 +1054,7 @@ form input[type="radio"]:checked + label {
 
   .body__home > main > section.home__content {
     top: 100%;
+    display: block;
   }
 
   .body__home > main > section .home__pillar {
