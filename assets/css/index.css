@@ -977,11 +977,12 @@ form input[type="radio"]:checked + label {
 }
 
 .body__home > main .home__content .home__content_item .content_item__content > p {
-  line-height: 1.21;
+  line-height: 22px;
   letter-spacing: 2px;
   font-size: 14px;
   max-width: 500px;
   display: inline-block;
+  margin-top: 0;
   margin-bottom: 3.28571429em;
 }
 
