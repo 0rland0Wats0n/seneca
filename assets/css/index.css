@@ -904,10 +904,10 @@ form input[type="radio"]:checked + label {
   background-repeat: no-repeat;
   height: 0;
   padding-top: 100%;
-  -webkit-transition: -webkit-box-flex 500ms ease;
-  transition: -webkit-box-flex 500ms ease;
-  transition: flex 500ms ease;
-  transition: flex 500ms ease, -webkit-box-flex 500ms ease, -ms-flex 500ms ease;
+  -webkit-transition: -webkit-box-flex 500ms ease, -webkit-transform 450ms ease-in-out;
+  transition: -webkit-box-flex 500ms ease, -webkit-transform 450ms ease-in-out;
+  transition: flex 500ms ease, transform 450ms ease-in-out;
+  transition: flex 500ms ease, transform 450ms ease-in-out, -webkit-box-flex 500ms ease, -ms-flex 500ms ease, -webkit-transform 450ms ease-in-out;
 }
 
 .body__home > main > section .home__pillar .home__pillar_content {
@@ -1170,6 +1170,13 @@ form input[type="radio"]:checked + label {
     padding-top: 0;
     height: 100%;
     position: relative;
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+
+  .body__home > main > section .home__pillar[data-state="unready"] .home__pillar_image {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
   }
 
   .body__home > main > section .home__pillar .home__pillar_image::before {
