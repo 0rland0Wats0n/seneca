@@ -23,13 +23,14 @@
   <body class="body__home">
     <nav data-state="closed">
       <div class="nav__list" data-state="closed">
-        <a href="#" title="Home">home</a>
-        <a href="/pages/about.html" title="About Us">about us</a>
-        <a href="/pages/trainings.html" title="Trainings">trainings</a>
+        <a href="#" title="Home" class="home__only_hamburger">home</a>
+        <a href="/pages/about.html" title="About Us" class="home__only_hamburger">about us</a>
+        <a href="/pages/trainings.html" title="Trainings" class="home__only_hamburger">training</a>
         <a href="/pages/adopt.html" title="Adopt">adopt</a>
-        <a href="/pages/events.html" title="Events">events</a>
-        <a href="/pages/donate.html" title="Give Back">give back</a>
-        <a href="/pages/contact.html" title="Contact">contact</a>
+        <a href="/pages/events.html" title="Events" class="home__only_hamburger">events</a>
+        <a href="/pages/donate.html" title="Donate">donate</a>
+        <a href="/pages/contact.html" title="Contact" class="home__only_hamburger">contact</a>
+        <a href="#work-with-us" class="home__only_main">work with us</a>
       </div>
       <span class="nav__toggle" data-state="closed">
         <span></span>
@@ -130,7 +131,7 @@
             <a href="/pages/adopt.html" class="button">learn more</a>
           </div>
         </div>
-        <div class="home__content_item" data-in-view="false">
+        <div id="work-with-us" class="home__content_item" data-in-view="false">
           <span>
             <img src="/assets/images/seneca_over_color_06.jpg" alt="" />
           </span>
@@ -167,26 +168,26 @@
           };
       }
 
-      function isElementInViewport(el) {
+      function isElementInViewport(el, p) {
         var rect = el.getBoundingClientRect();
+        var p = p || 1.25
         
         return rect.bottom > 0 &&
           rect.right > 0 &&
           rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
-          rect.top*1.25 < (window.innerHeight || document.documentElement.clientHeight);
+          rect.top*p < (window.innerHeight || document.documentElement.clientHeight);
       }
     </script>
     <script>
-      window.addEventListener("scroll", function() {
-        var homeBody = document.querySelector(".body__home");
+      var homeBody = document.querySelector(".body__home");
 
-        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
-          if (!homeBody.classList.contains("at_bottom"))
-            homeBody.classList.add("at_bottom");  
-        }
-
-        if (window.pageYOffset === 0 && homeBody.classList.contains("at_bottom")) {
-          homeBody.classList.remove("at_bottom");
+      window.addEventListener("scroll", function() {        
+        if (isElementInViewport(document.getElementById("content"), 2) && window.innerWidth > 992) {
+          if (!homeBody.classList.contains("show_nav"))
+            homeBody.classList.add("show_nav");
+        } else {
+          if (!document.querySelector("nav[data-state='open']"))
+            homeBody.classList.remove("show_nav");
         }
 
         document.querySelectorAll(".home__content_item").forEach(function(el) {
@@ -206,6 +207,13 @@
 
       document.onreadystatechange = function() {
         if (document.readyState === "complete") {
+          if (isElementInViewport(document.getElementById("content"), 2) && window.innerWidth > 992) {
+            if (!homeBody.classList.contains("at_bottom"))
+              homeBody.classList.add("show_nav");
+          } else {
+            homeBody.classList.remove("show_nav");
+          }
+          
           document.querySelectorAll(".home__pillar[data-state='unready']").forEach(function(pillar) {
             pillar.setAttribute("data-state", "ready");
           });
