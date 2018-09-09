@@ -41,12 +41,6 @@
       <span class="logo">
         <img src="/assets/images/seneca-logo.png" alt="Seneca Logo" />
       </span>
-      <span class="home__cta">
-        <h4 class="type__spacey type__uppercase type__color_white">unconditional care</h4>
-        <a href="#content">
-          <i><img src="/assets/images/chevron_with_circle_down@3x.png" alt="" /></i>
-        </a>
-      </span>
       <section>
         <span class="home__cta">
           <h4 class="type__spacey type__uppercase type__color_white">unconditional care</h4>
@@ -56,7 +50,7 @@
         </span>
         <div class="home__pillar" data-state="unready">
           <div class="revealer"></div>
-          <div class="home__pillar_image" style="background-image: url(assets/images/pillar__innovation.jpg)"></div>
+          <div class="home__pillar_image parallax" style="background-image: url(assets/images/pillar__innovation.jpg)"></div>
           <div class="home__pillar_content bg__yellow">
             <h4 class="type__color_white type__uppercase">innovation</h4>
             <span class="p__group">
@@ -71,7 +65,7 @@
         </div>
         <div class="home__pillar" data-state="unready">
           <div class="revealer"></div>
-          <div class="home__pillar_image" style="background-image: url(assets/images/pillar__education.jpg)"></div>
+          <div class="home__pillar_image parallax" style="background-image: url(assets/images/pillar__education.jpg)"></div>
           <div class="home__pillar_content bg__red">
             <h4 class="type__color_white type__uppercase">education</h4>
             <span class="p__group">
@@ -86,7 +80,7 @@
         </div>
         <div class="home__pillar" data-state="unready">
           <div class="revealer"></div>
-          <div class="home__pillar_image" style="background-image: url(assets/images/pillar__mental_health.jpg)"></div>
+          <div class="home__pillar_image parallax" style="background-image: url(assets/images/pillar__mental_health.jpg)"></div>
           <div class="home__pillar_content bg__green">
             <h4 class="type__color_white type__uppercase">mental health</h4>
             <span class="p__group">
@@ -101,7 +95,7 @@
         </div>
         <div class="home__pillar" data-state="unready">
           <div class="revealer"></div>
-          <div class="home__pillar_image" style="background-image: url(assets/images/pillar__permanence.jpg)"></div>
+          <div class="home__pillar_image parallax" style="background-image: url(assets/images/pillar__permanence.jpg)"></div>
           <div class="home__pillar_content bg__blue">
             <h4 class="type__color_white type__uppercase">permanence</h4>
             <span class="p__group">
@@ -176,6 +170,10 @@
       function isElementInViewport(el, p) {
         var rect = el.getBoundingClientRect();
         var p = p || 1.25
+
+        if (typeof jQuery === "function" && el instanceof jQuery) {
+          el = el[0];
+        }
         
         return rect.bottom > 0 &&
           rect.right > 0 &&
@@ -199,6 +197,22 @@
           if (isElementInViewport(el))
             el.setAttribute("data-in-view", "true");
         });
+
+        if (window.innerWidth < 768) {
+          var scrolled = $(window).scrollTop();
+          $('.parallax').each(function (index, element) {
+            var initY = $(this).offset().top;
+            var height = $(this).innerHeight();
+            var endY = initY + $(this).height();
+            var visible = isElementInViewport(this, 1);
+
+            if (visible) {
+              var diff = scrolled - initY;
+              var ratio = Math.round((diff / height) * 100);
+              $(this).css('background-position', 'center ' + parseInt((ratio)) + 'px');
+            }
+          })
+        }
       });
 
       document.querySelectorAll(".pillar__close").forEach(function(closeButton) {
