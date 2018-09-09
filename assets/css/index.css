@@ -843,7 +843,7 @@ form input[type="radio"]:checked + label {
 }
 
 .body__home > nav .nav__toggle {
-  top: 10px;
+  top: 36px;
   height: 25px;
   padding: 2px 5px;
   display: block;
@@ -869,6 +869,11 @@ form input[type="radio"]:checked + label {
 
 .body__home > nav .nav__toggle > span::after {
   top: 4px;
+}
+
+.body__home > nav .nav__toggle[data-state="open"] > span::after,
+.body__home > nav .nav__toggle[data-state="open"] > span::before {
+  background-color: #292929;
 }
 
 .body__home > main {
@@ -1068,6 +1073,7 @@ form input[type="radio"]:checked + label {
             flex: 1 0 30%;
     padding-top: 0;
     height: auto;
+    background-position: center !important;
   }
 
   .body__home > main > section .home__pillar .home__pillar_content {
@@ -1090,6 +1096,12 @@ form input[type="radio"]:checked + label {
   .body__home > nav {
     -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
+  }
+
+  .body__home > nav .nav__toggle {
+    top: 10px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   
   .body__home>main .logo {
