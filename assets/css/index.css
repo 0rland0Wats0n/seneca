@@ -1205,8 +1205,8 @@ form input[type="radio"]:checked + label {
 
 @media (max-width: 767px) {
   .body__home > main > section.accordion .accordion__item .home__pillar_image {
-    -webkit-transition: padding-top 400ms linear 300ms;
-    transition: padding-top 400ms linear 300ms;
+    -webkit-transition: padding-top 200ms ease-in;
+    transition: padding-top 200ms ease-in;
   }
 
   .body__home > main > section.accordion .accordion__item[data-accordion-state="inactive"] .home__pillar_image {
@@ -1224,21 +1224,22 @@ form input[type="radio"]:checked + label {
     margin: 0;
   }
 
+  .body__home > main > section.accordion .accordion__item[data-accordion-state="active"] .home__pillar_content > h4 {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+
   .body__home > main > section.accordion .accordion__item .home__pillar_content > .p__group,
   .body__home > main > section.accordion .accordion__item .home__pillar_content > .button {
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    -webkit-transition: opacity 300ms linear, -webkit-transform 400ms ease-in;
-    transition: opacity 300ms linear, -webkit-transform 400ms ease-in;
-    transition: transform 400ms ease-in, opacity 300ms linear;
-    transition: transform 400ms ease-in, opacity 300ms linear, -webkit-transform 400ms ease-in;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
   }
 
   .body__home > main > section.accordion .accordion__item[data-accordion-state="inactive"] .home__pillar_content > .p__group,
   .body__home > main > section.accordion .accordion__item[data-accordion-state="inactive"] .home__pillar_content > .button {
     opacity: 0;
-    -webkit-transform: translateY(-100px);
-            transform: translateY(-100px);
   }
 }
 

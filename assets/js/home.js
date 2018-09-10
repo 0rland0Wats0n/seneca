@@ -46,12 +46,9 @@ document.querySelectorAll(".accordion .accordion__item > .home__pillar_content")
       return;
 
     var active = document.querySelector(".accordion__item[data-accordion-state='active']");
-
-    active.setAttribute("data-accordion-state", "inactive");
-    this.parentElement.setAttribute("data-accordion-state", "active");
-    
     var scroll = 118.27 + (index * 75);
-
+    var that = this;
+    
     if (index > 0)
       scroll -= 75;
 
@@ -59,7 +56,15 @@ document.querySelectorAll(".accordion .accordion__item > .home__pillar_content")
       scrollTop: scroll
     }, 500);
 
-    $(".accordion__item[data-accordion-state='active'] .home__pillar_image").css("background-position", "center", 0);
+    setTimeout(function() {
+      active.setAttribute("data-accordion-state", "inactive");
+    }, 500);
+    
+    setTimeout(function() {
+      that.parentElement.setAttribute("data-accordion-state", "active");
+  
+      $(".accordion__item[data-accordion-state='active'] .home__pillar_image").css("background-position", "center", 0);
+    }, 1000);
   });
 });
 
