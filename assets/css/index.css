@@ -1089,7 +1089,7 @@ form input[type="radio"]:checked + label {
 }
 
 .body__home > main > section .home__pillar .home__pillar_content {
-  padding: 82px 2em 4em;
+  padding: 50px 2em;
   text-align: center;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
@@ -1100,9 +1100,9 @@ form input[type="radio"]:checked + label {
 }
 
 .body__home > main > section .home__pillar .home__pillar_content > h4 {
-  margin: 0 auto 82px;
-  letter-spacing: 25.5px;
-  font-size: 3.5vw;
+  margin: 0 auto 50px;
+  font-size: 18px;
+  letter-spacing: 5px;
   word-break: break-word;
 }
 
@@ -1112,6 +1112,12 @@ form input[type="radio"]:checked + label {
   letter-spacing: 1.5px;
   font-weight: 300;
   margin-bottom: 82px;
+}
+
+.body__home > main > section .home__pillar .home__pillar_content > .button {
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 6.3px;
 }
 
 .body__home > main > section .home__pillar .pillar__close {
@@ -1484,6 +1490,7 @@ form input[type="radio"]:checked + label {
 
   .body__home > main > section .home__pillar.active .home__pillar_content > h4 {
     font-size: 36px;
+    letter-spacing: 25.5px;
   }
 
   .body__home > main > section .home__pillar.active .home__pillar_content > .p__group {
