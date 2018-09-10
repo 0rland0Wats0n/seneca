@@ -40,31 +40,24 @@ document.querySelectorAll(".pillar__close").forEach(function (closeButton) {
 
 document.querySelectorAll(".accordion .accordion__item > .home__pillar_content").forEach(function(pillar, index) {
   pillar.addEventListener("click", function(e) {
+    if (window.innerWidth > 767) { return; }
+
     var isActive = this.parentElement.getAttribute("data-accordion-state") === "active";
 
-    if (isActive || window.innerWidth > 767)
-      return;
+    if (isActive) {
+      return this.parentElement.setAttribute("data-accordion-state", "inactive");
+    }
 
     var active = document.querySelector(".accordion__item[data-accordion-state='active']");
-    var scroll = 118.27 + (index * 75);
     var that = this;
     
-    if (index > 0)
-      scroll -= 75;
-
-    $("html, body").animate({
-      scrollTop: scroll
-    }, 500);
-
-    setTimeout(function() {
+    if (active) {
       active.setAttribute("data-accordion-state", "inactive");
-    }, 500);
+    }
     
     setTimeout(function() {
       that.parentElement.setAttribute("data-accordion-state", "active");
-  
-      $(".accordion__item[data-accordion-state='active'] .home__pillar_image").css("background-position", "center", 0);
-    }, 1000);
+    }, 300);
   });
 });
 
