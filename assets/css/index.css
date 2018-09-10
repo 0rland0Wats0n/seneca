@@ -960,7 +960,8 @@ form input[type="radio"]:checked + label {
 }
 
 .body__home > nav .nav__toggle {
-  top: 36px;
+  top: 17px;
+  right: 17px;
   height: 25px;
   padding: 2px 5px;
   display: block;
@@ -1004,7 +1005,8 @@ form input[type="radio"]:checked + label {
   text-align: center;
   margin: auto;
   width: 100%;
-  padding: 93px 2em;
+  padding: 36px 2em;
+  background-color: white;
 }
 
 .body__home > main > section .logo {
@@ -1012,7 +1014,7 @@ form input[type="radio"]:checked + label {
 }
 
 .body__home > main .logo > img {
-  width: 169px;
+  width: 177px;
   max-width: 100%;
 }
 
@@ -1266,6 +1268,7 @@ form input[type="radio"]:checked + label {
     display: block;
     position: absolute;
     z-index: 3;
+    background-color: rgba(0, 0, 0, 0);
   }
   
   .body__home > main .home__cta {
