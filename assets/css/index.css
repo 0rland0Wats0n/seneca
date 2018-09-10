@@ -1203,6 +1203,33 @@ form input[type="radio"]:checked + label {
   max-width: 200px;
 }
 
+@media (max-width: 767px) {
+  .body__home > main > section.accordion .accordion__item .home__pillar_image {
+    -webkit-transition: padding-top 400ms linear;
+    transition: padding-top 400ms linear;
+  }
+
+  .body__home > main > section.accordion .accordion__item[data-accordion-state="inactive"] .home__pillar_image {
+    padding-top: 0;
+  }
+
+  .body__home > main > section.accordion .accordion__item[data-accordion-state="inactive"] .home__pillar_content {
+    max-height: 75px;
+    padding: 25px 2em;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .body__home > main > section.accordion .accordion__item[data-accordion-state="inactive"] .home__pillar_content > h4 {
+    margin: 0;
+  }
+
+  .body__home > main > section.accordion .accordion__item[data-accordion-state="inactive"] .home__pillar_content > .p__group,
+  .body__home > main > section.accordion .accordion__item[data-accordion-state="inactive"] .home__pillar_content > .button {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
   .body__home>main>section .home__pillar {
     display: -webkit-box;
